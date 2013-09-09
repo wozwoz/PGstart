@@ -6,7 +6,7 @@
         id        = "biz.travelbytes.trigger"
         version   = "1.0.0">
 
-    <name>Hello Trigger</name>
+    <name>Trigger</name>
 
     <description>
         Hello Trigger application that responds to the deviceready event.
