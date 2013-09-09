@@ -13,7 +13,7 @@
     </description>
 
     <author href="http://travelbytes.biz" email="woz@travebytes.biz">
-        PhoneGap Team
+        Woz Team
     </author>
 
     <!--
@@ -21,7 +21,9 @@
         The "device" permission is required for the 'deviceready' event.
     -->
     <feature name="http://api.phonegap.com/1.0/device" />
-
+	<feature name="Notification">
+	    <param name="ios-package" value="CDVNotification" />
+	</feature>
     <!--
         If you do not want any permissions to be added to your app, add the
         following tag to your config.xml; you will still have the INTERNET
