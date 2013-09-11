@@ -1,4 +1,4 @@
-<html lang="en">
+<html>
 <head>
     <title>Message System</title>
     <meta charset="utf-8">
@@ -62,7 +62,7 @@
             if (e.sound) {
                 var snd = new Media(e.sound);
                 snd.play();
-                navigator.notification.alert(e.sound);
+                //navigator.notification.alert(e.sound);
             }
 
             if (e.badge) {
@@ -119,6 +119,7 @@
             $("#app-status-ul").append('<li>token: ' + result + '</li>');
             // Your iOS push server needs to know the token before it can push to this device
             // here is where you might want to send it the token for later use.
+            $('#app-status-ul.ul').listview('refresh');
         }
 
         function successHandler(result) {
@@ -143,29 +144,29 @@
             <div id="jqm-homeheader">
                 <h1 id="jqm-logo">
                     <a href="Home/index">
-                        <img src="Content/sesbw.jpg" alt="Message" /></a> </h1>
+                        <img src="Content/tb_logo_sm.gif" alt="Message" /></a> </h1>
                 <p>Travelbytes</p>
             </div>
 
 
-            <p class="intro"><strong>Welcome</strong> to Kiama mobile.</p>
+            <p class="intro"><strong>Welcome</strong> to Travelbytes mobile notification tester.</p>
             <div data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d">
                 <h3>More in this section</h3>
 
                 <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f">
                     <li data-role="list-divider">Overview</li>
-                    <li><a href="Home/DaySel" rel="external">Enter your availability</a></li>
-                    <li><a href="Home/Activity" rel="external">Member site activity</a></li>
+                    <li><a href="Home/DaySel" rel="external">View Booking</a></li>
+                    <li><a href="Home/Activity" rel="external">About</a></li>
                 </ul>
             </div>
         </div>
 
 
-        <div class="content-primary">
+        <div>
             <div id="home">
                 <div id="app-status-div">
                     <ul id="app-status-ul"  data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f">
-                        <li>Woz PushNotification Plugin Demo</li>
+                        <li data-role="list-divider">Woz PushNotification Plugin Demo</li>
                     </ul>
                 </div>
             </div>
