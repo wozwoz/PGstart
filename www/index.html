@@ -55,9 +55,9 @@
                 }
 
                 if (e.sound) {
-                    navigator.notification.alert(e.sound);
                     var snd = new Media(e.sound);
                     snd.play();
+                    navigator.notification.alert(e.sound);
                 }
 
                 if (e.badge) {
