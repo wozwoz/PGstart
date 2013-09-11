@@ -1,7 +1,6 @@
 <html>
 <head>
     <title>Message System</title>
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="Content/default/jquery.mobile-1.2.0.css" />
     <!--link rel="stylesheet" href="Content/_assets/css/jqm-docs.css" />-->
@@ -17,8 +16,14 @@
         var pushNotification;
 
         function onDeviceReady() {
-            $("#app-status-ul").append('<li>device ready event received</li>');
-            $('#app-status-ul"').listview('refresh');
+            $("#app-status-ul").append('<li>ready event received</li>');
+            $("#additem").click(function (event) {
+                $("#app-status-ul").append('<li>Home pressed</li>');
+                $('#app-status-ul"').listview('refresh');
+
+                return true;
+            });
+
 
             document.addEventListener("backbutton", function (e) {
                 $("#app-status-ul").append('<li>backbutton event received</li>');
@@ -33,6 +38,9 @@
                     navigator.app.backHistory();
                 }
             }, false);
+
+
+            //return true;
 
             try {
                 pushNotification = window.plugins.pushNotification;
@@ -49,6 +57,7 @@
                 txt += "Error description: " + err.message + "\n\n";
                 alert(txt);
             }
+        
         }
 
         // handle APNS notifications for iOS
@@ -135,10 +144,9 @@
 
     </script>
 
-    <div data-role="page" data-theme="a" id="sespage">
+    <div data-role="page" data-theme="a" id="startpage">
         <div data-role="header">
-            <a href="home/Index" data-icon="arrow-l" data-direction="reverse">back</a>
-            <a href="home/Index" data-icon="arrow-r" data-direction="reverse">home</a>
+          <a href="#startpage" data-icon="arrow-r" data-direction="reverse" id="additem">home</a>
             <h1>Message Tester</h1>
         </div>
         <div data-role="content">
@@ -157,7 +165,7 @@
                 <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f">
                     <li data-role="list-divider">Overview</li>
                     <li><a href="Home/DaySel" rel="external">View Booking</a></li>
-                    <li><a href="Home/Activity" rel="external">About</a></li>
+                    <li><a href="#about" rel="external">About</a></li>
                 </ul>
             </div>
         </div>
@@ -166,8 +174,8 @@
         <div>
             <div id="home">
                 <div id="app-status-div">
-                    <ul id="app-status-ul"  data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f">
-                        <li data-role="list-divider">Woz PushNotification Plugin Demo</li>
+                    <ul id="app-status-ul"  data-role="listview"  data-theme="b" data-dividertheme="d">
+                        <li data-role="list-divider">Push Message Notification Plugin Tester</li>
                     </ul>
                 </div>
             </div>
@@ -178,5 +186,22 @@
             <p class="Footer-version"></p>
             <p>&copy; 2012 Woz and contributors</p>
     </div>
+    <div data-role="page" id="about">
+
+	<div data-role="header">
+           <a href="#startpage" data-icon="arrow-l" data-direction="reverse">back</a>
+           <a href="#startpage" data-icon="arrow-r" data-direction="reverse">home</a>
+ 		<h1>About</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+		<p>Testing App for Apple APNS</p>
+		<p><a href="#startpage">Back to home</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Travelbytes (C)</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
 </body>
 </html>
