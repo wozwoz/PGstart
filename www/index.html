@@ -40,7 +40,7 @@
             }, false);
 
 
-            //return true;
+            return true;
 
             try {
                 pushNotification = window.plugins.pushNotification;
@@ -124,8 +124,11 @@
         }
 
         function tokenHandler(result) {
-            navigator.notification.alert(result);
+            // navigator.notification.alert(result);
+
             $("#app-status-ul").append('<li>token: ' + result + '</li>');
+            $("#myID").empty();
+            $("#myID").append(result);
             // Your iOS push server needs to know the token before it can push to this device
             // here is where you might want to send it the token for later use.
             $('#app-status-ul.ul').listview('refresh');
@@ -173,7 +176,7 @@
         <div>
             <div id="home">
                 <div id="app-status-div">
-                    <ul id="app-status-ul"  data-role="listview"  data-theme="b" data-dividertheme="d">
+                    <ul id="app-status-ul"  data-role="listview" >
                         <li data-role="list-divider">Push Message Notification Plugin Tester</li>
                     </ul>
                 </div>
@@ -196,6 +199,25 @@
 	<div data-role="content">
 		<p>Testing App for Apple APNS</p>
 		<p><a href="#startpage">Back to home</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Travelbytes (C)</h4>
+	</div><!-- /footer -->
+</div><!-- /page -->
+   <div data-role="page" id="MyID">
+
+	<div data-role="header">
+           <a href="#startpage" data-icon="arrow-l" data-direction="reverse">back</a>
+           <a href="#startpage" data-icon="arrow-r" data-direction="reverse">home</a>
+ 		<h1>About</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">
+	<ul data-role="listview">
+        <li data-role="list-divider">My Push ID</li>
+        <li><span id="myID">Not set</span></li>
+    </ul>
 	</div><!-- /content -->
 
 	<div data-role="footer">
