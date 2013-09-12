@@ -16,7 +16,7 @@
         var pushNotification;
 
         function onDeviceReady() {
-            $("#app-status-ul").append('<li>ready event received</li>');
+            // $("#app-status-ul").append('<li>ready event received</li>');
             $("#additem").click(function (event) {
                 $("#myID").append('<li>Home pressed</li>');
                 $('#myID"').listview('refresh');
@@ -48,7 +48,7 @@
                     $("#app-status-ul").append('<li>registering android</li>');
                     pushNotification.register(successHandler, errorHandler, { "senderID": "661780372179", "ecb": "onNotificationGCM" });		// required!
                 } else {
-                    $("#app-status-ul").append('<li>registering iOS</li>');
+                    //$("#app-status-ul").append('<li>registering iOS</li>');
                     pushNotification.register(tokenHandler, errorHandler, { "badge": "true", "sound": "true", "alert": "true", "ecb": "onNotificationAPN" });	// required!
                 }
             }
@@ -126,7 +126,7 @@
         function tokenHandler(result) {
             // navigator.notification.alert(result);
 
-            $("#app-status-ul").append('<li>token: ' + result + '</li>');
+            //$("#app-status-ul").append('<li>token: ' + result + '</li>');
             $("#myID").empty();
             $("#myID").append(result);
             // Your iOS push server needs to know the token before it can push to this device
