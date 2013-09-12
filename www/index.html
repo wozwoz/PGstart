@@ -18,8 +18,8 @@
         function onDeviceReady() {
             $("#app-status-ul").append('<li>ready event received</li>');
             $("#additem").click(function (event) {
-                $("#app-status-ul").append('<li>Home pressed</li>');
-                $('#app-status-ul"').listview('refresh');
+                $("#myID").append('<li>Home pressed</li>');
+                $('#myID"').listview('refresh');
 
                 return true;
             });
@@ -40,7 +40,7 @@
             }, false);
 
 
-            return true;
+            // return true;
 
             try {
                 pushNotification = window.plugins.pushNotification;
