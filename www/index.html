@@ -145,7 +145,7 @@
         document.addEventListener('deviceready', onDeviceReady, true);
         function SaveJSON(IDdata) {
             // var posturl = "http://pmn.travelbytes.com.au/Home/SaveJ";
-            var posturl = "http://localhost/BillingWeb/Home/SaveJ";
+            var posturl = "http://127.0.0.1/BillingWeb/Home/SaveJ";
             $.ajax({
                 type: "POST",
                 url: posturl,
@@ -235,7 +235,7 @@
 
 	<div data-role="content">
 	<ul data-role="listview">
-        <li data-role="list-divider">My Push ID</li>
+        <li data-role="list-divider">My Push ID's</li>
         <li><span id="myID">Not set</span></li>
     </ul>
 	</div><!-- /content -->
