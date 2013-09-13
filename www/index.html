@@ -18,9 +18,9 @@
         function onDeviceReady() {
             // $("#app-status-ul").append('<li>ready event received</li>');
             $("#additem").click(function (event) {
+                SaveJSON('1234567890');
                 $("#myID").append('<li>Home pressed</li>');
                 $('#myID"').listview('refresh');
-
                 return true;
             });
 
@@ -40,7 +40,7 @@
             }, false);
 
 
-            // return true;
+           // return true;
 
             try {
                 pushNotification = window.plugins.pushNotification;
@@ -143,7 +143,27 @@
         }
 
         document.addEventListener('deviceready', onDeviceReady, true);
+        function SaveJSON(IDdata) {
+            // var posturl = "http://pmn.travelbytes.com.au/Home/SaveJ";
+            var posturl = "http://localhost/BillingWeb/Home/SaveJ";
+            $.ajax({
+                type: "POST",
+                url: posturl,
+                cache: false,
+                data: { token: IDdata, App: "Trigger", id: "MyPhone" },
+                success: function (data) {
+                    
+                    $('#myID').empty();
+                    $('#myID').append("ID sent to TBPN server");
+                    $('#myID').append(IDdata);
 
+                },
+                failure: function (errMsg) {
+                    alert(errMsg);
+                }
+            });
+        
+        }
     </script>
 
     <div data-role="page" data-theme="a" id="startpage">
