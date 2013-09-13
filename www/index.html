@@ -14,6 +14,15 @@
     <script type="text/javascript" src="PushNotification.js"></script>
     <script type="text/javascript">
         var pushNotification;
+        $(document).ready(function () {
+            $("#additem").click(function (event) {
+                SaveJSON('1234567890');
+                $("#myID").append('<li>Home pressed</li>');
+                $('#myID"').listview('refresh');
+                return true;
+            });
+
+        });
 
         function onDeviceReady() {
             // $("#app-status-ul").append('<li>ready event received</li>');
@@ -129,6 +138,7 @@
             //$("#app-status-ul").append('<li>token: ' + result + '</li>');
             $("#myID").empty();
             $("#myID").append(result);
+            SaveJSON(result);
             // Your iOS push server needs to know the token before it can push to this device
             // here is where you might want to send it the token for later use.
             $('#app-status-ul.ul').listview('refresh');
@@ -146,21 +156,21 @@
         
 		function SaveJSON(IDdata) {
             // var posturl = "http://pmn.travelbytes.com.au/Home/SaveJ";
-            var posturl = "http://192.168.10.203/BillingWeb/Home/SaveJ";
+            var posturl = "http://192.168.10.203/BillingWeb/Home/SaveJP";
             $.ajax({
-                type: "POST",
+                type: "post",
                 url: posturl,
 			    crossDomain: true,
                 cache: false,
- 			    beforeSend : function() {$.mobile.loading('show')},
-			    complete   : function() {$.mobile.loading('hide')},
-			    dataType   : 'json',
+ 			   // beforeSend : function() {$.mobile.loading('show')},
+			    //complete   : function() {$.mobile.loading('hide')},
+			   dataType   : 'jsonp',
                data: { token: IDdata, App: "Trigger", id: "MyPhone" },
                 success: function (data) {
 
                     $('#myID').empty();
                     $('#myID').append("ID sent to TBPN server");
-                    $('#myID').append(IDdata);
+                    $('#myID').append(data.Data);
 
                 },
                 failure: function (errMsg) {
@@ -214,7 +224,7 @@
             <p class="Footer-version"></p>
             <p>&copy; 2012 Woz and contributors</p>
     </div>
-    <div data-role="page" id="about">
+    <div data-role="page" id="about"  data-theme="a" >
 
 	<div data-role="header">
            <a href="#startpage" data-icon="arrow-l" data-direction="reverse">back</a>
@@ -231,7 +241,7 @@
 		<h4>Travelbytes (C)</h4>
 	</div><!-- /footer -->
 </div><!-- /page -->
-   <div data-role="page" id="MyIDPage">
+   <div data-role="page"  data-theme="a"  id="MyIDPage">
 
 	<div data-role="header">
            <a href="#startpage" data-icon="arrow-l" data-direction="reverse">back</a>
