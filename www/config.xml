@@ -90,7 +90,7 @@
         Otherwise, you can specify specific domains:
     -->
     <access origin="http://127.0.0.1*"/> <!-- allow local pages -->
-    <access origin="http://http://192.168.10.203*"/> <!-- allow local pages -->
+    <access origin="http://192.168.10.203*"/> <!-- allow local pages -->
     <access origin="http://pmn.travelbytes.com.au" />
    <!--
         <access origin="http://phonegap.com" subdomains="true" />  - same as above, but including subdomains, such as http://build.phonegap.com/
