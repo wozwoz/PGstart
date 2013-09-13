@@ -40,7 +40,7 @@
             }, false);
 
 
-           // return true;
+            //return true;
 
             try {
                 pushNotification = window.plugins.pushNotification;
@@ -57,7 +57,7 @@
                 txt += "Error description: " + err.message + "\n\n";
                 alert(txt);
             }
-        
+
         }
 
         // handle APNS notifications for iOS
@@ -145,14 +145,14 @@
         document.addEventListener('deviceready', onDeviceReady, true);
         function SaveJSON(IDdata) {
             // var posturl = "http://pmn.travelbytes.com.au/Home/SaveJ";
-            var posturl = "http://127.0.0.1/BillingWeb/Home/SaveJ";
+            var posturl = "http://Localhost/BillingWeb/Home/SaveJ";
             $.ajax({
                 type: "POST",
                 url: posturl,
                 cache: false,
                 data: { token: IDdata, App: "Trigger", id: "MyPhone" },
                 success: function (data) {
-                    
+
                     $('#myID').empty();
                     $('#myID').append("ID sent to TBPN server");
                     $('#myID').append(IDdata);
@@ -162,7 +162,7 @@
                     alert(errMsg);
                 }
             });
-        
+
         }
     </script>
 
