@@ -19,8 +19,8 @@
             // $("#app-status-ul").append('<li>ready event received</li>');
             $("#additem").click(function (event) {
                 SaveJSON('1234567890');
-                $("#myID").append('<li>Home pressed</li>');
-                $('#myID"').listview('refresh');
+                $("#mylist").append('<li>Home pressed</li>');
+                $('#mylist"').listview('refresh');
                 return true;
             });
 
@@ -239,7 +239,7 @@
 	</div><!-- /header -->
 
 	<div data-role="content">
-	<ul data-role="listview">
+	<ul data-role="listview" id='mylist'>
         <li data-role="list-divider">My Push ID's</li>
         <li><span id="myID">Not set</span></li>
     </ul>
