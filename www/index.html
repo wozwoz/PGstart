@@ -149,8 +149,12 @@
             $.ajax({
                 type: "POST",
                 url: posturl,
+			    crossDomain: true,
                 cache: false,
-                data: { token: IDdata, App: "Trigger", id: "MyPhone" },
+ 			    beforeSend : function() {$.mobile.loading('show')},
+			    complete   : function() {$.mobile.loading('hide')},
+			    dataType   : 'json',
+               data: { token: IDdata, App: "Trigger", id: "MyPhone" },
                 success: function (data) {
 
                     $('#myID').empty();
@@ -164,6 +168,7 @@
             });
 
         }
+
     </script>
 
     <div data-role="page" data-theme="a" id="startpage">
