@@ -156,7 +156,13 @@
         
 		function SaveJSON(IDdata) {
             // var posturl = "http://pmn.travelbytes.com.au/Home/SaveJ";
-            var posturl = "http://192.168.10.203/BillingWeb/Home/SaveJP";
+		    var posturl = "http://192.168.10.203/BillingWeb/Home/SaveJP";
+		    var DeviceName = "Not avaialble";
+		    if (window.device && window.device.name)
+		        DeviceName = window.device.name;
+
+
+
             $.ajax({
                 type: "post",
                 url: posturl,
@@ -165,7 +171,7 @@
  			   // beforeSend : function() {$.mobile.loading('show')},
 			    //complete   : function() {$.mobile.loading('hide')},
 			   dataType   : 'jsonp',
-               data: { token: IDdata, App: "Trigger", id: "MyPhone" },
+			   data: { token: IDdata, App: "Trigger", idPhone: DeviceName, Network: ""  },
                 success: function (data) {
 
                     $('#myID').empty();
