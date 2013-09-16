@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Message System</title>
@@ -29,7 +30,35 @@
                 return true;
             });
 
+            $("#Savemyurl").click(function (event) {
+                localStorage.setItem("SaveIDURL", $("#saveurl").val());
+                return true;
+            });
+
+            LocalStorageLoad();
+
         });
+
+        function LoadDeviceDetails() {
+            try
+            {
+                $("#DeviceDetails").html( 'Device Name: ' + device.name + '<br />' +
+                                    'Device PhoneGap: ' + device.phonegap + '<br />' +
+                                    'Device Platform: ' + device.platform + '<br />' +
+                                    'Device UUID: ' + device.uuid + '<br />' +
+                                    'Device Version: ' + device.version + '<br />');
+            }
+            catch(err)
+            {
+                $("#DeviceDetails").html( "No device details available<br/>" );
+            }
+        }
+        function LocalStorageLoad() {
+            if (localStorage.getItem("SaveIDURL"))
+                $("#saveurl").val(localStorage.getItem("SaveIDURL"));
+
+            LoadDeviceDetails();
+       }
 
         function onDeviceReady() {
             // $("#app-status-ul").append('<li>ready event received</li>');
@@ -40,6 +69,12 @@
                 return true;
             });
 
+            $("#Savemyurl").click(function (event) {
+                localStorage.setItem("SaveIDURL", $("#saveurl").val());
+                return true;
+            });
+
+            LocalStorageLoad();
 
             document.addEventListener("backbutton", function (e) {
                 $("#app-status-ul").append('<li>backbutton event received</li>');
@@ -163,8 +198,12 @@
         document.addEventListener('deviceready', onDeviceReady, true);
         
 		function SaveJSON(IDdata) {
-            // var posturl = "http://pmn.travelbytes.com.au/Home/SaveJ";
+            // var posturl = "http://pmn.travelbytes.com.au:8080/Home/SaveJP";
 		    var posturl = "http://192.168.10.203/BillingWeb/Home/SaveJP";
+
+		    if ($("#saveurl").val().length > 0)
+		        posturl = $("#saveurl").val();
+
 		    var DeviceName = "Not avaialble";
 		    if (device && device.name)
 		        DeviceName = device.name;
@@ -274,7 +313,16 @@
 	</div><!-- /header -->
 
 	<div data-role="content">
-        <div id="deviceid" />
+        <br />
+        
+        <div id="items">
+            <input id="saveurl" type="text" value='http://pmn.travelbytes.com.au:8080/Home/SaveJP' />
+            <input type="button" value="Save" id="Savemyurl" />
+        </div>
+        <br />
+        <div id="DeviceDetails" />
+        <br />
+
 	<ul data-role="listview" id='mylist'>
         <li data-role="list-divider">My Push ID's</li>
         <li><span id="myID">Not set</span></li>
