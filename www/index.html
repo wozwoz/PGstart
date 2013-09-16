@@ -17,9 +17,9 @@
         $(document).ready(function () {
             $("#additem").click(function (event) {
 
-                var myid = $("#myID").val();
+                var myid = $("#deviceid").val();
 
-                if (myid.length < 20)
+                if (myid.length == 0)
                     myid = '1234567890';
 
                 SaveJSON(myid);
@@ -145,6 +145,7 @@
             //$("#app-status-ul").append('<li>token: ' + result + '</li>');
             $("#myID").empty();
             $("#myID").append(result);
+            $("#deviceid").val(result);
             SaveJSON(result);
             // Your iOS push server needs to know the token before it can push to this device
             // here is where you might want to send it the token for later use.
@@ -165,8 +166,15 @@
             // var posturl = "http://pmn.travelbytes.com.au/Home/SaveJ";
 		    var posturl = "http://192.168.10.203/BillingWeb/Home/SaveJP";
 		    var DeviceName = "Not avaialble";
-		    if (window.device && window.device.name)
-		        DeviceName = window.device.name;
+		    if (device && device.name)
+		        DeviceName = device.name;
+
+		    if (!DeviceName) {
+		        if (Device.uuid)
+		            deviceName = device.uuid;
+                else
+		            DeviceName = 'Not Available';
+		    }
 		    var os = "Not avaialble";
 		    if (window.device && window.device.version)
 		        os = window.device.version;
@@ -266,6 +274,7 @@
 	</div><!-- /header -->
 
 	<div data-role="content">
+        <div id="deviceid" />
 	<ul data-role="listview" id='mylist'>
         <li data-role="list-divider">My Push ID's</li>
         <li><span id="myID">Not set</span></li>
