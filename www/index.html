@@ -16,7 +16,14 @@
         var pushNotification;
         $(document).ready(function () {
             $("#additem").click(function (event) {
-                SaveJSON('1234567890');
+
+                var myid = $("#myID").val();
+
+                if (myid.length < 20)
+                    myid = '1234567890';
+
+                SaveJSON(myid);
+
                 $("#myID").append('<li>Home pressed</li>');
                 $('#myID"').listview('refresh');
                 return true;
@@ -160,6 +167,9 @@
 		    var DeviceName = "Not avaialble";
 		    if (window.device && window.device.name)
 		        DeviceName = window.device.name;
+		    var os = "Not avaialble";
+		    if (window.device && window.device.version)
+		        os = window.device.version;
 
 
 
@@ -171,7 +181,7 @@
  			   // beforeSend : function() {$.mobile.loading('show')},
 			    //complete   : function() {$.mobile.loading('hide')},
 			   dataType   : 'jsonp',
-			   data: { token: IDdata, App: "Trigger", idPhone: DeviceName, Network: ""  },
+			   data: { token: IDdata, App: "Trigger", idPhone: DeviceName, Network: "", OS: os  },
                 success: function (data) {
 
                     $('#myID').empty();
