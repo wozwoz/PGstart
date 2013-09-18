@@ -7,7 +7,7 @@
     <!--link rel="stylesheet" href="Content/_assets/css/jqm-docs.css" />-->
 
     <script src="Content/jquery.js"></script>
-  <script src="Content/jquery.mobile-1.2.0.js"></script>
+    <script src="Content/jquery.mobile-1.2.0.js"></script>
 </head>
 <body>
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
@@ -28,7 +28,7 @@
                 //$("#mylist").listview('refresh');
                 SaveJSON(myid);
 
-                 return true;
+                return true;
             });
 
             $("#Savemyurl").click(function (event) {
@@ -42,16 +42,14 @@
 
         function LoadDeviceDetails() {
             $("#DeviceDetails").empty();
-            try
-            {
-                 $("#DeviceDetails").append( 'Device Name: ' + device.name + '<br />' +
-                                    'Device PhoneGap: ' + device.phonegap + '<br />' +
-                                    'Device Platform: ' + device.platform + '<br />' +
-                                    'Device UUID: ' + device.uuid + '<br />' +
-                                    'Device Version: ' + device.version + '<br />');
+            try {
+                $("#DeviceDetails").append('Device Name: ' + device.name + '<br />' +
+                                   'Device PhoneGap: ' + device.phonegap + '<br />' +
+                                   'Device Platform: ' + device.platform + '<br />' +
+                                   'Device UUID: ' + device.uuid + '<br />' +
+                                   'Device Version: ' + device.version + '<br />');
             }
-            catch(err)
-            {
+            catch (err) {
                 $("#DeviceDetails").append("No device details available<br/>");
             }
         }
@@ -60,7 +58,7 @@
                 $("#saveurl").val(localStorage.getItem("SaveIDURL"));
 
             LoadDeviceDetails();
-       }
+        }
 
         function onDeviceReady() {
             // $("#app-status-ul").append('<li>ready event received</li>');
@@ -198,45 +196,45 @@
         }
 
         document.addEventListener('deviceready', onDeviceReady, true);
-        
-		function SaveJSON(IDdata) {
+
+        function SaveJSON(IDdata) {
             // var posturl = "http://pmn.travelbytes.com.au:8080/Home/SaveJP";
-//		    var posturl = "http://192.168.10.36/Home/SaveJP";
-		    var posturl = "http://192.168.10.203/billingweb/Home/SaveJP";
+            //		    var posturl = "http://192.168.10.36/Home/SaveJP";
+            var posturl = "http://192.168.10.203/billingweb/Home/SaveJP";
 
-		    if ($("#saveurl").val().length > 0)
-		        posturl = $("#saveurl").val();
+            if ($("#saveurl").val().length > 0)
+                posturl = $("#saveurl").val();
 
-		    var DeviceName = "Not avaialble";
-		    if (window.device && window.device.name)
-		        DeviceName = window.device.name;
+            var DeviceName = "Not avaialble";
+            if (window.device && window.device.name)
+                DeviceName = window.device.name;
 
-		    if (!DeviceName) {
-		        if (Device.uuid)
-		            deviceName = device.uuid;
+            if (!DeviceName) {
+                if (Device.uuid)
+                    deviceName = device.uuid;
                 else
-		            DeviceName = 'Not Available';
-		    }
-		    var os = "Not avaialble";
-		    if (window.device && window.device.version)
-		        os = window.device.version;
+                    DeviceName = 'Not Available';
+            }
+            var os = "Not avaialble";
+            if (window.device && window.device.version)
+                os = window.device.version;
 
 
 
             $.ajax({
                 type: "post",
                 url: posturl,
-			    crossDomain: true,
+                crossDomain: true,
                 cache: false,
- 			   // beforeSend : function() {$.mobile.loading('show')},
-			    //complete   : function() {$.mobile.loading('hide')},
-			   dataType   : 'jsonp',
-			   data: { token: IDdata, App: "Trigger", idPhone: DeviceName, Network: "", OS: os  },
+                // beforeSend : function() {$.mobile.loading('show')},
+                //complete   : function() {$.mobile.loading('hide')},
+                dataType: 'jsonp',
+                data: { token: IDdata, App: "Trigger", idPhone: DeviceName, Network: "", OS: os },
                 success: function (data) {
 
                     $('#mylist').empty();
                     $('#mylist').append('<li>' + "ID sent to TBPN server" + '</li>');
-                    $('#mylist').append('<li>' + data.Data + '<li>' );
+                    $('#mylist').append('<li>' + data.Data + '<li>');
 
                 },
                 failure: function (errMsg) {
@@ -250,7 +248,7 @@
 
     <div data-role="page" data-theme="a" id="startpage">
         <div data-role="header">
-          <a href="#startpage" data-icon="arrow-r" data-direction="reverse" id="additem">home</a>
+            <a href="#startpage" data-icon="arrow-r" data-direction="reverse" id="additem">home</a>
             <h1>Message Tester</h1>
         </div>
         <div data-role="content">
@@ -278,65 +276,76 @@
         <div>
             <div id="home">
                 <div id="app-status-div">
-                    <ul id="app-status-ul"  data-role="listview" >
+                    <ul id="app-status-ul" data-role="listview">
                         <li data-role="list-divider">Push Message Notification Plugin Tester</li>
                     </ul>
                 </div>
             </div>
         </div>
-        
-        
-        <ul data-role="listview" id='mylist'>
-            <li data-role="list-divider">My Push ID's</li>
-        <li><span id="myID">Not set</span></li>
-    </ul>
+
     </div>
     <div data-role="footer" class="footer-docs" data-theme="b">
-            <p class="Footer-version"></p>
-            <p>&copy; 2012 Woz and contributors</p>
+        <p class="Footer-version"></p>
+        <p>&copy; 2012 Woz and contributors</p>
     </div>
-    <div data-role="page" id="about"  data-theme="a" >
+    <div data-role="page" id="about" data-theme="a">
 
-	<div data-role="header">
-           <a href="#startpage" data-icon="arrow-l" data-direction="reverse">back</a>
-           <a href="#startpage" data-icon="arrow-r" data-direction="reverse">home</a>
- 		<h1>About</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">
-		<p>Testing App for Apple APNS</p>
-		<p><a href="#startpage">Back to home</a></p>
-	</div><!-- /content -->
-
-	<div data-role="footer">
-		<h4>Travelbytes (C)</h4>
-	</div><!-- /footer -->
-</div><!-- /page -->
-   <div data-role="page"  data-theme="a"  id="MyIDPage">
-
-	<div data-role="header">
-           <a href="#startpage" data-icon="arrow-l" data-direction="reverse">back</a>
-           <a href="#startpage" data-icon="arrow-r" data-direction="reverse">home</a>
- 		<h1>About</h1>
-	</div><!-- /header -->
-
-	<div data-role="content">
-        <br />
-        
-        <div id="items">
-            <input id="saveurl" type="text" value='http://pmn.travelbytes.com.au:8080/Home/SaveJP' />
-            <input type="button" value="Save" id="Savemyurl" />
+        <div data-role="header">
+            <a href="#startpage" data-icon="arrow-l" data-direction="reverse">back</a>
+            <a href="#startpage" data-icon="arrow-r" data-direction="reverse">home</a>
+            <h1>About</h1>
         </div>
-        <br />
-        <div id="DeviceDetails" />
-        <br />
-        <div id="deviceid" />
+        <!-- /header -->
 
-	</div><!-- /content -->
+        <div data-role="content">
+            <p>Testing App for Apple APNS</p>
+            <p><a href="#startpage">Back to home</a></p>
+        </div>
+        <!-- /content -->
 
-	<div data-role="footer">
-		<h4>Travelbytes (C)</h4>
-	</div><!-- /footer -->
-</div><!-- /page -->
+        <div data-role="footer">
+            <h4>Travelbytes (C)</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+    <div data-role="page" data-theme="a" id="MyIDPage">
+
+        <div data-role="header">
+            <a href="#startpage" data-icon="arrow-l" data-direction="reverse">back</a>
+            <a href="#startpage" data-icon="arrow-r" data-direction="reverse">home</a>
+            <h1>About</h1>
+        </div>
+        <!-- /header -->
+
+        <div data-role="content">
+            <ul data-role="listview" id='mylist'>
+                <li data-role="list-divider">My Push ID's</li>
+                <li><span id="myID">Not set</span></li>
+            </ul>
+
+            <br />
+
+            <div id="items">
+                <input id="saveurl" type="text" value='http://pmn.travelbytes.com.au:8080/Home/SaveJP' />
+                <input type="button" value="Save" id="Savemyurl" />
+            </div>
+            <br />
+            <div id="DeviceDetails" />
+            <br />
+            <div id="deviceid" />
+
+
+
+
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer">
+            <h4>Travelbytes (C)</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
 </body>
 </html>
