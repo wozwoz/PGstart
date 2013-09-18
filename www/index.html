@@ -18,16 +18,17 @@
         $(document).ready(function () {
             $("#additem").click(function (event) {
 
-                var myid = $("#deviceid").val();
+                var myid = $("#deviceid").html();
 
-                if (myid.length == 0)
+                if (!myid || myid.length == 0) {
                     myid = '1234567890';
-
+                    $("#deviceid").html(myid);
+                }
+                $("#mylist").append('<li>Home pressed</li>');
+                //$("#mylist").listview('refresh');
                 SaveJSON(myid);
 
-                $("#myID").append('<li>Home pressed</li>');
-                $('#myID"').listview('refresh');
-                return true;
+                 return true;
             });
 
             $("#Savemyurl").click(function (event) {
@@ -40,9 +41,10 @@
         });
 
         function LoadDeviceDetails() {
+            $("#DeviceDetails").empty();
             try
             {
-                $("#DeviceDetails").html( 'Device Name: ' + device.name + '<br />' +
+                 $("#DeviceDetails").append( 'Device Name: ' + device.name + '<br />' +
                                     'Device PhoneGap: ' + device.phonegap + '<br />' +
                                     'Device Platform: ' + device.platform + '<br />' +
                                     'Device UUID: ' + device.uuid + '<br />' +
@@ -50,7 +52,7 @@
             }
             catch(err)
             {
-                $("#DeviceDetails").html( "No device details available<br/>" );
+                $("#DeviceDetails").append("No device details available<br/>");
             }
         }
         function LocalStorageLoad() {
@@ -64,7 +66,7 @@
             // $("#app-status-ul").append('<li>ready event received</li>');
             $("#additem").click(function (event) {
                 $("#mylist").append('<li>Home pressed</li>');
-                $('#mylist"').listview('refresh');
+                //$('#mylist').listview('refresh');
                 SaveJSON('1234567890');
                 return true;
             });
@@ -178,8 +180,8 @@
             // navigator.notification.alert(result);
 
             //$("#app-status-ul").append('<li>token: ' + result + '</li>');
-            $("#myID").empty();
-            $("#myID").append(result);
+            $("#mylist").empty();
+            $("#mylist").append('<li>' + result + '</li>');
             $("#deviceid").val(result);
             SaveJSON(result);
             // Your iOS push server needs to know the token before it can push to this device
@@ -199,14 +201,15 @@
         
 		function SaveJSON(IDdata) {
             // var posturl = "http://pmn.travelbytes.com.au:8080/Home/SaveJP";
-		    var posturl = "http://192.168.10.203/BillingWeb/Home/SaveJP";
+//		    var posturl = "http://192.168.10.36/Home/SaveJP";
+		    var posturl = "http://192.168.10.203/billingweb/Home/SaveJP";
 
 		    if ($("#saveurl").val().length > 0)
 		        posturl = $("#saveurl").val();
 
 		    var DeviceName = "Not avaialble";
-		    if (device && device.name)
-		        DeviceName = device.name;
+		    if (window.device && window.device.name)
+		        DeviceName = window.device.name;
 
 		    if (!DeviceName) {
 		        if (Device.uuid)
@@ -231,9 +234,9 @@
 			   data: { token: IDdata, App: "Trigger", idPhone: DeviceName, Network: "", OS: os  },
                 success: function (data) {
 
-                    $('#myID').empty();
-                    $('#myID').append("ID sent to TBPN server");
-                    $('#myID').append(data.Data);
+                    $('#mylist').empty();
+                    $('#mylist').append('<li>' + "ID sent to TBPN server" + '</li>');
+                    $('#mylist').append('<li>' + data.Data + '<li>' );
 
                 },
                 failure: function (errMsg) {
@@ -282,6 +285,11 @@
             </div>
         </div>
         
+        
+        <ul data-role="listview" id='mylist'>
+            <li data-role="list-divider">My Push ID's</li>
+        <li><span id="myID">Not set</span></li>
+    </ul>
     </div>
     <div data-role="footer" class="footer-docs" data-theme="b">
             <p class="Footer-version"></p>
@@ -322,11 +330,8 @@
         <br />
         <div id="DeviceDetails" />
         <br />
+        <div id="deviceid" />
 
-	<ul data-role="listview" id='mylist'>
-        <li data-role="list-divider">My Push ID's</li>
-        <li><span id="myID">Not set</span></li>
-    </ul>
 	</div><!-- /content -->
 
 	<div data-role="footer">
