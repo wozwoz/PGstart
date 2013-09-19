@@ -206,20 +206,31 @@
                 posturl = $("#saveurl").val();
 
             var DeviceName = "Not avaialble";
-            if (window.device && window.device.name)
-                DeviceName = window.device.name;
+            try
+            {
+                if (window.device && window.device.name)
+                    DeviceName = window.device.name;
 
-            if (!DeviceName) {
-                if (Device.uuid)
-                    deviceName = device.uuid;
-                else
-                    DeviceName = 'Not Available';
+                if (!DeviceName) {
+                    if (Device.uuid)
+                        deviceName = device.uuid;
+                    else
+                        DeviceName = 'Not Available';
+                }
             }
+            catch(err)
+            {
+            }
+
             var os = "Not avaialble";
-            if (window.device && window.device.version)
-                os = window.device.version;
-
-
+            try
+            {
+                if (device && device.version)
+                    os = device.platform + " " + device.version;
+            }
+            catch(err)
+            {
+            }
 
             $.ajax({
                 type: "post",
