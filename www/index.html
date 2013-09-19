@@ -113,6 +113,9 @@
 
         // handle APNS notifications for iOS
         function onNotificationAPN(e) {
+
+            var badge = 0;
+
             if (e.alert) {
                 $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
                 $('#app-status-ul"').listview('refresh');
@@ -125,8 +128,13 @@
             }
 
             if (e.badge) {
+
                 pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
+                badge = e.badge;
             }
+
+            Acknowl
+
         }
 
         // handle GCM notifications for Android
@@ -245,6 +253,38 @@
 
                     $('#mylist').empty();
                     $('#mylist').append('<li>' + "ID sent to TBPN server" + '</li>');
+                    $('#mylist').append('<li>' + data.Data + '<li>');
+
+                },
+                failure: function (errMsg) {
+                    alert(errMsg);
+                }
+            });
+
+        }
+        function AckJSON(IDdata) {
+            // var posturl = "http://pmn.travelbytes.com.au:8080/Home/AcknowledgeJP";
+            //		    var posturl = "http://192.168.10.36/Home/AcknowledgeJP";
+            var posturl = "http://192.168.10.203/billingweb/Home/AcknowledgeJP";
+
+            if ($("#saveurl").val().length > 0)
+                posturl = $("#saveurl").val();
+
+            
+            posturl = posturl.replace("SaveJP", "AcknowledgeJP");
+
+ 
+            $.ajax({
+                type: "post",
+                url: posturl,
+                crossDomain: true,
+                cache: false,
+                // beforeSend : function() {$.mobile.loading('show')},
+                //complete   : function() {$.mobile.loading('hide')},
+                dataType: 'jsonp',
+                data: { token: IDdata },
+                success: function (data) {
+
                     $('#mylist').append('<li>' + data.Data + '<li>');
 
                 },
