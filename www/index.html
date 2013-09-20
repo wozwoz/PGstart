@@ -124,24 +124,28 @@
         function onNotificationAPN(e) {
 
             var badge = 0;
+            try
+            {
+                if (e.alert) {
+                    $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
 
-            if (e.alert) {
-                $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
+                }
+
+                if (e.sound) {
+                    var snd = new Media(e.sound);
+                    snd.play();
+                    //navigator.notification.alert(e.sound);
+                }
+
+                if (e.badge) {
+
+                    pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
+                    badge = e.badge;
+                }
 
             }
-
-            if (e.sound) {
-                var snd = new Media(e.sound);
-                snd.play();
-                //navigator.notification.alert(e.sound);
+            catch (err) {
             }
-
-            if (e.badge) {
-
-                pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
-                badge = e.badge;
-            }
-
             AckJSON($("#deviceid").html());
 
         }
