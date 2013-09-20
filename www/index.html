@@ -27,7 +27,7 @@
                 $("#mylist").append('<li>Home pressed</li>');
                 //$("#mylist").listview('refresh');
                 SaveJSON(myid);
-
+                AckJSON(myid);
                 return true;
             });
 
@@ -133,7 +133,7 @@
                 badge = e.badge;
             }
 
-            Acknowl
+            AckJSON($("#deviceid").val());
 
         }
 
