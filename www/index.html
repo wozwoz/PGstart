@@ -4,7 +4,7 @@
     <title>Message System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="Content/default/jquery.mobile-1.2.0.css" />
-    <link rel="stylesheet" href="css/app.css" />
+    <!--link rel="stylesheet" href="css/app.css" />-->
     <!--link rel="stylesheet" href="Content/_assets/css/jqm-docs.css" />-->
 
     <script src="Content/jquery.js"></script>
@@ -67,6 +67,14 @@
                 $("#mylist").append('<li>Home pressed</li>');
                 //$('#mylist').listview('refresh');
                 SaveJSON('1234567890');
+                return true;
+            });
+            $("#clearmessage").click(function (event) {
+                var myid = "";
+                myid = $("#deviceid").html();
+                $("#mylist").append('<li>Clear pressed for ' + myid + '</li>');
+                //$('#mylist').listview('refresh');
+                AckJSON(myid);
                 return true;
             });
 
