@@ -4,6 +4,7 @@
     <title>Message System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="Content/default/jquery.mobile-1.2.0.css" />
+    <link rel="stylesheet" href="css/app.css" />
     <!--link rel="stylesheet" href="Content/_assets/css/jqm-docs.css" />-->
 
     <script src="Content/jquery.js"></script>
@@ -343,8 +344,7 @@
         <!-- /header -->
 
         <div data-role="content">
-                        <div id="deviceid" />
-
+            <div id="deviceid"></div>
             <p>Testing App for Apple APNS</p>
             <p><a href="#" id="clearmessage">Clear message</a></p>
             <p><a href="#startpage">Back to home</a></p>
@@ -370,195 +370,6 @@
             <ul data-role="listview" id='mylist'>
                 <li data-role="list-divider">My Push ID's</li>
                 <li><span id="myID">Not set</span></li>
-            </ul>
-
-
-            <ul class="icon-list clearfix">
-
-
-                <li data-categoryid="navigation" data-cid="pageheader" class="ui-draggable">
-                    <div cid="pageheader" class="jqm-icon jqm-icon-pageheader">
-                    </div>
-                    <div class="label">
-                        Page Header
-                    </div>
-                </li>
-
-                <li data-categoryid="navigation" data-cid="pagefooter" class="ui-draggable">
-                    <div cid="pagefooter" class="jqm-icon jqm-icon-pagefooter">
-                    </div>
-                    <div class="label">
-                        Page Footer
-                    </div>
-                </li>
-
-
-
-                <li data-categoryid="navigation" data-cid="navbar" class="ui-draggable">
-                    <div cid="navbar" class="jqm-icon jqm-icon-navbar">
-                    </div>
-                    <div class="label">
-                        Nav Bar
-                    </div>
-                </li>
-
-
-
-                <li data-categoryid="action" data-cid="button" class="ui-draggable">
-                    <div cid="button" class="jqm-icon jqm-icon-button">
-                    </div>
-                    <div class="label">
-                        Button
-                    </div>
-                </li>
-
-                <li data-categoryid="action" data-cid="link" class="ui-draggable">
-                    <div cid="link" class="jqm-icon jqm-icon-link">
-                    </div>
-                    <div class="label">
-                        Link
-                    </div>
-                </li>
-
-
-
-                <li data-categoryid="content" data-cid="image" class="ui-draggable">
-                    <div cid="image" class="jqm-icon jqm-icon-image">
-                    </div>
-                    <div class="label">
-                        Image
-                    </div>
-                </li>
-
-                <li data-categoryid="content" data-cid="googlemaps" class="ui-draggable">
-                    <div cid="googlemaps" class="jqm-icon jqm-icon-googlemaps">
-                    </div>
-                    <div class="label">
-                        Map
-                    </div>
-                </li>
-
-                <li data-categoryid="content" data-cid="heading" class="ui-draggable">
-                    <div cid="heading" class="jqm-icon jqm-icon-heading">
-                    </div>
-                    <div class="label">
-                        Heading
-                    </div>
-                </li>
-
-
-
-                <li data-categoryid="content" data-cid="collapsible" class="ui-draggable">
-                    <div cid="collapsible" class="jqm-icon jqm-icon-collapsible">
-                    </div>
-                    <div class="label">
-                        Collapsible
-                    </div>
-                </li>
-
-                <li data-categoryid="content" data-cid="grid" class="ui-draggable">
-                    <div cid="grid" class="jqm-icon jqm-icon-grid">
-                    </div>
-                    <div class="label">
-                        Grid
-                    </div>
-                </li>
-
-
-
-
-
-                <li data-categoryid="listviews" data-cid="listview" class="ui-draggable">
-                    <div cid="listview" class="jqm-icon jqm-icon-listview">
-                    </div>
-                    <div class="label">
-                        List View
-                    </div>
-                </li>
-
-
-
-                <li data-categoryid="forms" data-cid="form" class="ui-draggable">
-                    <div cid="form" class="jqm-icon jqm-icon-form">
-                    </div>
-                    <div class="label">
-                        Form
-                    </div>
-                </li>
-
-                <li data-categoryid="forms" data-cid="textinput" class="ui-draggable">
-                    <div cid="textinput" class="jqm-icon jqm-icon-textinput">
-                    </div>
-                    <div class="label">
-                        Text Input
-                    </div>
-                </li>
-
-                <li data-categoryid="forms" data-cid="searchinput" class="ui-draggable">
-                    <div cid="searchinput" class="jqm-icon jqm-icon-searchinput">
-                    </div>
-                    <div class="label">
-                        Search Input
-                    </div>
-                </li>
-
-                <li data-categoryid="forms" data-cid="textarea" class="ui-draggable">
-                    <div cid="textarea" class="jqm-icon jqm-icon-textarea">
-                    </div>
-                    <div class="label">
-                        Text Area
-                    </div>
-                </li>
-
-                <li data-categoryid="forms" data-cid="toggleswitch" class="ui-draggable">
-                    <div cid="toggleswitch" class="jqm-icon jqm-icon-toggleswitch">
-                    </div>
-                    <div class="label">
-                        Toggle Switch
-                    </div>
-                </li>
-
-                <li data-categoryid="forms" data-cid="slider" class="ui-draggable">
-                    <div cid="slider" class="jqm-icon jqm-icon-slider">
-                    </div>
-                    <div class="label">
-                        Slider
-                    </div>
-                </li>
-
-                <li data-categoryid="forms" data-cid="selectmenu" class="ui-draggable">
-                    <div cid="selectmenu" class="jqm-icon jqm-icon-selectmenu">
-                    </div>
-                    <div class="label">
-                        Select Menu
-                    </div>
-                </li>
-
-                <li data-categoryid="forms" data-cid="radiobuttons" class="ui-draggable">
-                    <div cid="radiobuttons" class="jqm-icon jqm-icon-radiobuttons">
-                    </div>
-                    <div class="label">
-                        Radio Buttons
-                    </div>
-                </li>
-
-                <li data-categoryid="forms" data-cid="checkboxes" class="ui-draggable">
-                    <div cid="checkboxes" class="jqm-icon jqm-icon-checkboxes">
-                    </div>
-                    <div class="label">
-                        Checkboxes
-                    </div>
-                </li>
-
-                <li data-categoryid="forms" data-cid="submitbutton" class="ui-draggable">
-                    <div cid="submitbutton" class="jqm-icon jqm-icon-submitbutton">
-                    </div>
-                    <div class="label">
-                        Submit Button
-                    </div>
-                </li>
-
-
             </ul>
 
             <br />
