@@ -128,7 +128,7 @@
             {
                 if (e.alert) {
                     $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
-
+                    navigator.notification.alert(e.alert);
                 }
 
                 if (e.sound) {
@@ -146,6 +146,8 @@
             }
             catch (err) {
             }
+
+            // tell server the message has arrived
             AckJSON($("#deviceid").html());
 
         }
