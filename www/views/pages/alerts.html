@@ -1,0 +1,49 @@
+
+<div class="navbar navbar" ng-controller="NavBarCtrl">
+	<div class="navbar-inner">
+		<div class="container">
+			<!-- <div class="pull-left"><a href="#/"><div id="ios-arrow-left" title="Back"></a></div></div> -->
+			<div class="pull-left">
+				<a href="#/" id="ios-arrow-left" title="Back"></a>
+			</div>
+			<a class="brand" href="#"><img src="images/v2-logo-navbar.png   " alt="logo" style="margin-left:55px;"></a> 
+		</div>
+	</div><!-- /navbar-inner -->
+</div><!--/Navbar-->
+
+
+
+
+<div class="container alerts" ng-controller="MCMCtrl">
+	
+	<button ng-click="refreshMessages()" style="margin-bottom:20px;" class="btn btn-default"><i class="icon-refresh"></i></button>
+	
+	<!--Title Section-->
+	<div class="row">
+		<div class="span4 offset4 blue-bg img-top-rounded">
+			<h1>Traveller Alerts</h1>
+		</div>
+	</div>
+	<!--/.Title Section-->
+
+
+	<!-- Alerts Array -->
+	<div class="row">
+		<div class="span4 offset4 well img-bottom-rounded"
+			ng-show="MCMAlerts.MessageList.length <= 0">
+			No Alerts Currently
+		</div>
+		<div class="span4 offset4 well img-bottom-rounded"
+		 	ng-show="MCMAlerts.MessageList.length > 0">
+
+			<div ng-repeat="msg in MCMAlerts.MessageList">
+				<alert-item content="msg"></alert-item>
+				<hr>
+			</div>
+
+		</div>
+	</div>
+	<!-- /Alerts Array -->
+
+
+</div><!--/.container

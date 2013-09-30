@@ -150,6 +150,12 @@ input[type="button"] {
   border:0;
   border-bottom:2px solid $purpledarker;
 }
+.btn-secondary {
+  @include buttonBackground($purple, $purpledark);
+  padding-left: 30px;
+  padding-right: 30px;
+  width: auto;
+}
 // Warning appears are orange
 .btn-warning {
   @include buttonBackground($btnWarningBackground, $btnWarningBackgroundHighlight);

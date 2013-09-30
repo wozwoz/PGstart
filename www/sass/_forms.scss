@@ -4,7 +4,7 @@
 
 
 // GENERAL STYLES
-// --------------
+// ----------------
 
 // Make all forms have space below them
 form {
@@ -687,3 +687,16 @@ legend + .control-group {
     padding-left: $horizontalComponentOffset;
   }
 }
+// Login, Register, Settings, Social
+.login .well, .login form {margin-bottom:0!important;}
+.login .social {padding-top:0;padding-bottom:0;}
+.login label.checkbox {float:left;}
+.blue-bg h1 {margin-top:0;margin-left:0;}
+.social .icon-fixed-width {font-size:20px;}
+.social a {float:right;width:50px;height:50px;line-height:56px;display:table-cell;vertical-align: middle;text-align: center;}
+  .social a:hover {text-decoration:none;}
+  .social a i {padding-right:0!important;}
+  .social .socmess {padding:14px 0 0 0;float:left;}
+  .social .socico div {float:right;width:50px;height:50px;border-left:1px solid #e4e4e4;}
+  .socico {float:right;margin-right:-17px;}
+

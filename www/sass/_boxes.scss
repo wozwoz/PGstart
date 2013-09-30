@@ -2,10 +2,13 @@ $width-1:                 57px !default;
 $width-2:                 67% !default;
 $width-3:                 50% !default;
 
-$margin-1:                 2% !default;
+$margin-1:                 12px !default;
 $margin-1-top:             15px !default;
 $margin-bottom:            20px !default;
 
+* {
+	font-family: "Open Sans", sans-serif;
+}
 
 
 .width-1 {
@@ -70,6 +73,7 @@ $margin-bottom:            20px !default;
 .fix {
 	padding: 0px !important;
 }
+.margin-left-fix {margin-left:0;}
 
 .border-bottom {
 	border-bottom: 1px solid $gray;
@@ -94,65 +98,52 @@ $margin-bottom:            20px !default;
 }
 
 ul.nav-swipe {
-	padding:0;
-	margin:0;
-	-webkit-padding-start: 0px;
-	list-style-type: none;
-	li {
-		padding:0;
 		margin:0;
-		list-style:none;
-		float:left;
-		width:57px;
+		padding:0;
+	li {
 		height:57px;
-		border-right:1px solid #dbdbdb;
 	}
 
 	i {
-		font-size:24px;
-		line-height:57px;
+		font-size:21px;
+		line-height:63px;
+		color:#bbbcbf;
+		margin:0 20px;
 	}
 
-	li.active {
+	li.active, li.active i{
 		color:$blue;
 		font-size:30px;
 	}
 }
 
-ul.nav-swipe-main {
-	padding:0;
-	margin:0;
-	background:$white;
-	margin-bottom:20px;
-	-webkit-padding-start: 0px;
-	list-style-type: none;
-	width:100%;
-	height:57px;
-}
+
 
 .text-box {
 	border:1px solid #ececec;
 	background:#fafafa;
 	padding:20px;
+	margin-bottom: 20px;
 }
 
 .left-messages {
-	position:fixed;
-	right:4px;
-	top:110px;
-	z-index: 200;
-	.box {
-		width:37px;
-		height:37px;
-		@include buttonBackground($redlight, $red);
-		border:0;
-		border-bottom:2px solid #d50d41;
-	}
-
+position:fixed;
+right:4px;
+top:110px;
+z-index: 200;
+width:37px;
+height:37px;
+@include buttonBackground($redlight, $red);
+border:0;
+border-bottom:2px solid #d50d41;
 	i {
 		line-height:37px;
 		font-size:21px;
 		color:$white;
+	}
+
+	a {
+		text-decoration:none;
 	}
 }
 
@@ -171,8 +162,8 @@ button i {
 }
 
 p {
-margin: 0 0 9px 0;
-line-height: 1;
+margin: 0 0 8px 0;
+line-height: 16px;
 font-weight: 300;
 	b {
 		text-transform:uppercase;
@@ -189,7 +180,6 @@ font-weight: 300;
 	margin-left: 10px;
 }
 .span4.blue-bg {padding:19px;}
-
 
 .responsive-buttons .span4 {
 	margin-bottom: 10px;
@@ -212,8 +202,21 @@ font-weight: 300;
 		text-transform: uppercase;
 		text-align:center;
 		font-weight:600; 
+		float:left;
 	}
 }
+
+	.swipe-long {
+		height:30px;
+		line-height:30px;
+		text-transform: uppercase;
+		text-align:center;
+		font-weight:600; 
+		color:#bbbcbf;
+		font-family: "Open Sans", sans-serif;
+		border-right:1px solid #dbdbdb;
+	}
+
 
 
 	.swipe-bg-none {
@@ -226,3 +229,80 @@ font-weight: 300;
 		font-size:25px;
 		font-weight:600;
 	}
+
+
+.fix-height {
+	height: 120px;
+}
+
+.border-right {
+	border-right:1px solid #dbdbdb;
+}
+
+.padding-fix {
+	padding-top: 10px !important;
+}
+
+.padding-left {
+	padding-top: 10px;
+	padding-left: 12px;
+}
+
+.active {
+		color:$blue;
+		font-size:30px;
+	}
+ul.seg-cards {margin:12px 0 0 0;list-style:none;}
+.intro {text-align:center;padding:19px;}
+.login .intro p {color: #FFF;font-size: 15px;line-height: 1.55em;}
+body.login {
+  // repeating amex bg below 
+  //background: $bodyBackground url(../images/amex-bg-repeat.png) repeat-x 0 0;} 
+  // FULL SCREEN image
+  background: url(http://www.australia.com/contentimages/plan-plan-your-trip-find-travel-agent.jpg) no-repeat fixed;
+}
+
+table.table-striped:first-child tr td {
+padding-top: 14px;
+}
+
+
+.onoffswitch {
+	margin-bottom:20px;
+}
+
+.no-bg {
+	background:none;
+	background:#bdbec1 !important;
+}
+
+.settings p {
+	line-height:40px;
+}
+
+.alerts 
+{
+	h2 {
+		margin: 0 0 8px 0;
+		font-size: 12px;
+		line-height: 16px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	h3 {
+		margin: 0 0 8px 0;
+		line-height: 16px;
+		font-weight: 300;
+		font-size: 12px;
+	}
+
+	button i {
+		margin:0;
+	}
+
+}
+
+.alerts p span {
+
+}

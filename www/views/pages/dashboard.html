@@ -1,0 +1,92 @@
+<div  ng-controller="DashboardCtrl">
+
+	<!--Navbar-->
+
+	<div class="navbar navbar" ng-controller="NavBarCtrl">
+		<div class="navbar-inner">
+			<div class="container">
+				<i ng-click="isCollapsed = !isCollapsed" class="hidden-desktop icon-reorder pull-right"></i>
+
+				<a class="brand" href="#"><img src="images/logo.png" alt="logo"</a>
+
+				<div class="nav-collapse text-center" collapse="isCollapsed">
+					<ul class="nav pull-right">
+						<li><a href="#/">Dashboard</a></li>
+						<li><a href="#/profile">Your Profile</a></li>
+						<li><a href="#/settings">Settings</a></li>
+						<li><a href="#/privacy">Privacy</a></li>
+						<li><a href="#/terms">T&amp;C's</a></li>
+						<li><a href="" ng-click="signout()">Sign Out</a></li>
+					</ul>
+				</div>
+				<!-- /.nav-collapse -->
+			</div>
+		</div>
+		<!-- /navbar-inner -->
+	</div>
+	<!--/Navbar-->
+
+	<!-- Alerts Affix -->
+	<div class="left-messages img-rounded text-center">
+		<a href="#/alerts" class="box ">
+			<i class="icon-exclamation-sign"></i>
+		</a>
+	</div>
+	<!-- /Alerts Affic -->
+
+
+	<div class="container">
+	<!-- Booking Section-->
+	<section class="bookingSummary" ng-repeat="booking in bookings">
+
+		<div ng-controller="BookingCtrl" data-rloc="{{booking.rloc}}">
+
+			<!--.Title Section-->
+			<div class="row-fluid blue-bg white-text img-top-rounded margin-top">
+				<div class="title-fix">
+					<h2>REF: {{booking.rloc}}</h2>
+					<h1>{{booking.title}}</h1>
+					<h2>{{booking.startDate}}</h2>
+				</div>
+			</div><!--/.Title Section-->
+
+
+	 		<div class="swrapper">
+				<div id="wrapper-{{$index}}" class="wrapper">
+					<div class="scroller">
+						<ul class="menu">
+							<li ng-repeat="segmentDateGrp in booking.segmentDateGroups">
+									<div class="bar-swipe">
+										<div class="swipe-long">{{segmentDateGrp.title}}</div>
+									</div>
+									<ul class="nav-swipe white-bg pull-left text-center">
+										<li ng-repeat="segment in segmentDateGrp.segments" ng-click="segmentSelect(segment.segNum)" style="border-right:1px solid #dbdbdb;"><a>
+											<i class="ss-icon">{{segment.segIcon}}</i></a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- /Icon Tray -->
+				
+					<!-- Segment Cards -->
+					<div class=''>
+						<ul class="seg-cards">
+							<li ng-repeat="segment in booking.segments" 
+								ng-show="display.show && segment.meta.segNum == display.segNum"
+								ng-swipe-right="cardRight()"
+								ng-swipe-left="cardLeft()"
+								ng-animate="'animate'">
+								<content-item content="segment"></content-item>
+							</li>
+						</ul>	
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</section> <!-- /BookingSummary Section -->
+	</div>
+</div>

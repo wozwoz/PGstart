@@ -1,0 +1,740 @@
+{
+  "tbstruct": {
+    "tbemails": {
+      "Attachments": {
+        
+      },
+      "tbemail": [
+        {
+          "from_address": "itinerary@mytravelplans.eu",
+          "attachment_name": "BOWMAN_STORRM MR",
+          "bcc": "",
+          "txt_xslt_file": "C:\\TravelBytes\\qilive\\html_transforms\\MTS-SHORT-TEXT-EN.xsl",
+          "cc": "",
+          "to": "\u0087KIRA.KRYLOVA@AEXP.COM\u0087",
+          "subject": " Itinerary  for BOWMAN/STORRM MR 10OCT13 GAZRVK",
+          "html_xslt_file": "C:\\TravelBytes\\qilive\\html_transforms\\MTS-SHORT-HTML-EN.xsl",
+          "replyto_address": "qi-noreplyUK@mytravelplans.eu",
+          "from_name": "American Express"
+        },
+        {
+          "from_address": "itinerary@mytravelplans.eu",
+          "attachment_name": "BOWMAN_STORRM MR",
+          "bcc": "",
+          "txt_xslt_file": "C:\\TravelBytes\\qilive\\html_transforms\\MTS-SHORT-TEXT-EN.xsl",
+          "cc": "",
+          "to": "\u0087CUSTOMEREMAIL@HERE.COM\u0087",
+          "subject": " Itinerary  for BOWMAN/STORRM MR 10OCT13 GAZRVK",
+          "html_xslt_file": "C:\\TravelBytes\\qilive\\html_transforms\\MTS-SHORT-HTML-EN.xsl",
+          "replyto_address": "qi-noreplyUK@mytravelplans.eu",
+          "from_name": "American Express"
+        }
+      ],
+      "defaults": {
+        "from_address": "itinerary@mytravelplans.eu",
+        "attachment_name": "BOWMAN_STORRM MR",
+        "txt_xslt_file": "C:\\TravelBytes\\qilive\\html_transforms\\MTS-SHORT-TEXT-EN.xsl",
+        "subject": " Itinerary  for BOWMAN/STORRM MR 10OCT13 GAZRVK",
+        "html_xslt_file": "C:\\TravelBytes\\qilive\\html_transforms\\MTS-SHORT-HTML-EN.xsl",
+        "replyto_address": "qi-noreplyUK@mytravelplans.eu",
+        "from_name": "American Express"
+      }
+    },
+    "tbdoc": {
+      "MyTravelPlans": {
+        "DirectLink": {
+          "EmailDisplay": "ON",
+          "Region": "EMEA",
+          "MTPURL": "",
+          "$t": "/Itinerary?RLOC=GAZRVK&SURNAME=BOWMAN&UTID=461934"
+        }
+      },
+      "BookingInformation": {
+        "AgentDetails": {
+          "Address1": "American Express Centurion Concierge",
+          "City": "Brighton",
+          "Address3": "",
+          "Address2": "1 John Street",
+          "Address5": "",
+          "Address4": "",
+          "Country": "UK",
+          "Address6": "Brighton  UK BN88 1NH",
+          "ContactCodes": {
+            "ContactCode": [
+              {
+                "label": "Telephone :",
+                "contact_type": "Telep",
+                "$t": "0808 100 50 50"
+              },
+              {
+                "label": "From Overseas :",
+                "contact_type": "Phone",
+                "$t": "+44 1273 667272"
+              },
+              {
+                "label": "Facsimile :",
+                "contact_type": "Fax",
+                "$t": "01273 607921"
+              },
+              {
+                "label": "Email :",
+                "contact_type": "Email",
+                "$t": "centurionuk@service.americanexpress.com"
+              }
+            ]
+          },
+          "Postcode": "BN88 1NH",
+          "State": ""
+        },
+        "PassengerDetails": {
+          "Phone": "???",
+          "FirstName": "STORRM MR",
+          "Email": "\u0087KIRA.KRYLOVA@AEXP.COM\u0087",
+          "SurName": "BOWMAN"
+        },
+        "Ref": "GAZRVK"
+      },
+      "RateInfoMessages": {
+        
+      },
+      "AdditionalInfo": {
+        "AdditionalMessages": {
+          "AdditionalMessage": {
+            "RmkNum": "008",
+            "TEXT": "YOUR EXECUTIVE IS STORRM BOWMAN",
+            "formats": "TEXT;HTML",
+            "SegNum": "-1",
+            "$t": "YOUR EXECUTIVE IS STORRM BOWMAN"
+          }
+        },
+        "LoyaltyPrograms": {
+          "LoyaltyProgram": {
+            "LoyaltyNumber": "2418430",
+            "AirlineCode": "QF",
+            "LoyaltyStatus": "",
+            "MarketingAirlineName": "Qantas Airways"
+          }
+        },
+        "airlineRecordLocators": {
+          
+        },
+        "FareRemarks": {
+          
+        }
+      },
+      "headerItems": {
+        "headerItem": [
+          {
+            "href": "/tbassets/static/css/itin_smartphone_002.css",
+            "type": "text/css",
+            "seq": "0",
+            "media": "screen and (min-device-width:320px) and (max-width:1001px)",
+            "rel": "stylesheet"
+          },
+          {
+            "href": "/tbassets/static/css/itin_desktop_003.css",
+            "type": "text/css",
+            "seq": "1",
+            "media": "screen and (min-device-width:600px) and (min-width:1002px), print, projection",
+            "rel": "stylesheet"
+          },
+          {
+            "href": "/tbassets/static/css/itin_mts_centurion_smartphone_001.css",
+            "type": "text/css",
+            "seq": "2",
+            "media": "screen and (min-device-width:320px) and (max-width:1001px)",
+            "rel": "stylesheet"
+          },
+          {
+            "href": "/tbassets/static/css/itin_mts_centurion_desktop_001.css",
+            "type": "text/css",
+            "seq": "3",
+            "media": "screen and (min-device-width:600px) and (min-width:1002px), print, projection",
+            "rel": "stylesheet"
+          },
+          {
+            "href": "/tbassets/static/css/itin_print_003.css",
+            "type": "text/css",
+            "seq": "4",
+            "media": "print",
+            "rel": "stylesheet"
+          },
+          {
+            "href": "/tbassets/static/js/libs/jquery-1.6.2.min.js",
+            "type": "text/javascript",
+            "seq": "4",
+            "media": "",
+            "rel": ""
+          },
+          {
+            "href": "/tbassets/static/css/itin_mts_centurion_print_001.css",
+            "type": "text/css",
+            "seq": "4",
+            "media": "print",
+            "rel": "stylesheet"
+          },
+          {
+            "href": "/tbassets/static/js/itin_expand-collapse_001.js",
+            "type": "text/javascript",
+            "seq": "5",
+            "media": "",
+            "rel": ""
+          },
+          {
+            "type": "text",
+            "href": "",
+            "rel": "",
+            "media": "",
+            "seq": "6",
+            "$t": " <!-- this IE conditional comment inserted by QI Forms -->\n <!--[if lt IE 9]>\n   <link type=\"text/css\" rel=\"stylesheet\" href=\"/tbassets/static/css/itin_desktop_003.css\" media=\"screen, print, projection\" />\n   <link type=\"text/css\" rel=\"stylesheet\" href=\"/tbassets/static/css/itin_ie_002.css\" />\n   <link type=\"text/css\" rel=\"stylesheet\" href=\"/tbassets/static/css/itin_print_003.css\" media=\"print\" />\n   <script> document.createElement(\"header\" ); document.createElement(\"footer\" ); document.createElement(\"section\"); document.createElement(\"aside\" ); document.createElement(\"nav\" ); document.createElement(\"article\"); document.createElement(\"hgroup\" ); document.createElement(\"time\" ); </script>\n   <noscript>     <strong>Warning !</strong> Because your browser does not support HTML5, some elements are simulated using JScript. Unfortunately your browser has disabled scripting. Please enable it in order to display this page.  </noscript>\n <![endif]-->\n      "
+          },
+          {
+            "type": "text",
+            "href": "",
+            "rel": "",
+            "media": "",
+            "seq": "7",
+            "$t": " <!-- this IE conditional comment inserted by QI Forms -->\n <!--[if lt IE 9]>\n\t <link type=\"text/css\" rel=\"stylesheet\" href=\"/tbassets/static/css/itin_mts_centurion_desktop_001.css\" media=\"screen, print, projection\" />\n\t <link type=\"text/css\" rel=\"stylesheet\" href=\"/tbassets/static/css/itin_mts_centurion_print_001.css\" media=\"print\" />\n  <![endif]-->\n      "
+          }
+        ]
+      },
+      "Compliance": {
+        "HTMLDATA": {
+          "seq": "4",
+          "$t": " <h1 class=\"centurion\">\n\tTravel Information</h1>\n <div>\n\tPlease take the time to read prior to your departure, the following contains helpful information:</div>\n <div>\n\t     <ul>\n\t\t         <li>\n\t\t\t             <strong>Minimum Check in (Domestic):</strong> We recommend travellers check in at least 60 minutes prior to departure for Domestic flights, with the exception of low             <br />\n\t\t\tcost carriers, where we recommend a minimum check in of at least 120 minutes.&nbsp; We suggest onward reservations and flight times are reconfirmed 72             <br />\n\t\t\thours prior to departure. Due to heightened security the airlines&rsquo; check in time and reconfirmation policies may differ so please check with your airline for             <br />\n\t\t\tthe latest information.         </li>\n\t\t         <li>\n\t\t\t             <strong>Minimum Check in (European):</strong> We recommend travellers check in at least 90 minutes prior to departure for European flights, with the exception of low             <br />\n\t\t\tcost carriers, where we recommend a minimum check in of at least 120 minutes.&nbsp; We suggest onward reservations and flight times are reconfirmed 72             <br />\n\t\t\thours prior to departure. Due to heightened security the airlines&rsquo; check in time and reconfirmation policies may differ so please check with your airline for             <br />\n\t\t\tthe latest information.         </li>\n\t\t         <li>\n\t\t\t             <strong>Minimum Check in (International):</strong> We recommend travellers check in at least 120 minutes prior to departure for International flights. We suggest             <br />\n\t\t\tonward reservations and flight times are reconfirmed 72 hours prior to departure. Due to heightened security the airlines&rsquo; check in time and reconfirmation             <br />\n\t\t\tpolicies may differ. Please check with your airline for the latest information.         </li>\n\t\t         <li>\n\t\t\t             <strong>Electronic Tickets:</strong> When travelling on an International or European electronic ticket it is a requirement that you carry your passport at all times. When             <br />\n\t\t\ttravelling on a Domestic electronic ticket it is a requirement that you carry a valid passport or approved photo identification at all times. It is essential that             <br />\n\t\t\tthe name on your ticket matches exactly the name as shown on your passport.         </li>\n\t\t         <li>\n\t\t\t             <strong>Seating &amp; Meals: </strong>Pre-assigned seating and special meal requests as shown on your itinerary are subject to confirmation upon check in and the airlines             <br />\n\t\t\treserve the right to change this without notice at any time.         </li>\n\t\t         <li>\n\t\t\t             <strong>Checked Baggage &amp; Quarantine:</strong> Checked baggage policies vary by airline, booking class, frequent flyer status, baggage size and weight, including             <br />\n\t\t\todd- shaped items and sports equipment. Please refer to the respective airlines website and countries websites for further information on checked and             <br />\n\t\t\trestricted baggage policies and quarantine items to ascertain if additional charges will apply.         </li>\n\t\t         <li>\n\t\t\t             <strong>Travel Insurance:</strong> It is strongly recommended to take out travel insurance policy for all destinations, Please call for a Travel Insurance quote: 0800 028             <br />\n\t\t\t7573 or visit&nbsp;              <a href=\"http://www.americanexpress.co.uk/insurance\">www.americanexpress.co.uk/insurance</a>         </li>\n\t\t         <li>\n\t\t\t             <strong>Taxes &amp; Pricing: </strong>Please note taxes and pricing quoted are subject to change without notice due to airline/operator increases and/or currency fluctuations. &nbsp;             <br />\n\t\t\tPrices can only be guaranteed when paid in full and tickets and documents have been issued.         </li>\n\t\t         <li>\n\t\t\t             <strong>Local departure Taxes: </strong>Some countries have a departure tax which is additional to the price of your ticket, Please ensure you sufficient local currency to             <br />\n\t\t\tpay for this at the airport         </li>\n\t\t         <li>\n\t\t\t             <strong>No Show / Cancellation Penalties:</strong> You may incur an airline No Show fee if you fail to notify the airline or American Express travel that you are unable to             <br />\n\t\t\ttravel on the flights you have booked. Additionally, failure to cancel the flight reservation may deem your ticket unusable and non refundable. Certain fares             <br />\n\t\t\thave penalties applicable if cancelled within a stipulated time. If not cancelled within these time-frames, the ticket is deemed a No Show.         </li>\n\t\t         <li>\n\t\t\tNo Show / cancellation penalties also apply to hotels and car rentals.&nbsp; Please check with the hotel or car hire company for more information.             <br />\n\t\t\tPlease ensure you obtain a cancellation reference when cancelling any reservation.&nbsp; American Express will not be held liable for any No Show charges             <br />\n\t\t\tpertaining to cancelled hotel rooms if a cancellation reference is not supplied to support this.         </li>\n\t\t         <li>\n\t\t\t             <strong>Passport &amp; Visa:</strong> Please ensure you are holding a passport that has at least 6 months validity beyond the last day of this itinerary and is machine             <br />\n\t\t\treadable and has clear pages. Please ensure you have complied with any visa, documentation and health requirements for the countries you are visiting             <br />\n\t\t\tor transiting.         </li>\n\t\t         <li>\n\t\t\t             <strong>All Travellers to the USA:</strong> From the 12th January 2009 all nationals and citizens included in the Visa Waiver Programme &ndash; see             <br />\n\t\t\t             <a href=\"http://www.usembassy.org.uk\">http://www.usembassy.org.uk</a> for VWP countries, who plan to travel to the USA for temporary business or pleasure are required to hold an electronic travel authorisation prior to boarding a U.S bound airplane or cruise ship. Electronic authorisations need to be submitted on              <a href=\"https://esta.cbp.dhs.gov\">https://esta.cbp.dhs.gov</a> no less than 72 hours prior to travel. However last minute authorisations can be submitted at the above website. Once approved the electronic travel authorisation will be valid for 2 years or until your passport expires if within the 2 years. Each traveller is responsible for holding the correct documents for their own travel. Beginning 8 September 8 2010, a US$14 fee will be charged for processing ESTA applications. This fee is payable at the time of application, and directly to the U.S. government. The U.S. Government does not support the use of third party vendors for the purpose of applying for ESTA, and recommends that you do not pay a third party vendor to apply on your behalf as accuracy of data cannot be verified. All payments for ESTA applications and renewals must be made by credit card or debit card when applying for or renewing an ESTA.&nbsp; American Express can not be held liable for travellers not holding the correct documentation. Due to US border changes, each foreign visitor between 14 and 79 years of age will be required to have their fingerprints and photograph taken digitally upon arrival at a US port by the immigration authorities.         </li>\n\t\t         <li>\n\t\t\t             <strong>APIS:</strong> (Advanced Passenger Information System) Customs in some countries require additional details not contained on your passport, including             <br />\n\t\t\tpassengers&rsquo; country of residence and full destination address alternatively the first hotel night in those countries. It is the responsibility of the airlines to             <br />\n\t\t\tcollect this data from passengers. We recommend travellers to facilitate completion of this information via the airline online check-in system prior to             <br />\n\t\t\tarriving at the airport. Some airlines may charge or refuse completion of the information at the airport - check with your airline in advance. As Advanced             <br />\n\t\t\tPassenger Information forms part of the airline check-in process it is the responsibility of each traveller to ensure the information is accurate and complete             <br />\n\t\t\tprior to depart Please arrive at the airport in ample time to allow for the additional security measures         </li>\n\t\t         <li>\n\t\t\t             <strong>Frequent Flyer:</strong> Please retain your boarding passes to assist in the reconciliation of your frequent flyer statements. At time of check in the airline can             <br />\n\t\t\treconfirm that your frequent flyer number has been entered.         </li>\n\t\t         <li>\n\t\t\t             <strong>Passenger Rights:</strong> The European Union has provided passengers with specific rights when flights are disrupted (delayed, cancelled) or overbooked. EU             <br />\n\t\t\tlegislation also covers loss, delay or damage to baggage. Please visit this link for additional information: &nbsp;             <br />\n\t\t\t             <a href=\"http://ec.europa.eu/transport/air_portal/passenger_rights/index_en.htm\">http://ec.europa.eu/transport/air_portal/passenger_rights/index_en.htm</a>         </li>\n\t     </ul>\n </div>\n <h1>\n\tImportant Information</h1>\n <div>\n\t     <p>\n\t\tPlease take the time to read, the following contains important information</p>\n\t     <ul>\n\t\t         <li>\n\t\t\t             <strong>Travel Intermediary Disclosure: </strong>Travel Intermediary Disclosure American Express (AMEX) helps manage your travel expenses and assists             <br />\n\t\t\tyou in finding travel suppliers and making arrangements that meet your individual needs. We consider various factors in identifying travel suppliers and             <br />\n\t\t\trecommending specific itineraries.&nbsp; In this role, we are acting as an independent third party and not as a fiduciary.&nbsp; We want you to be aware that certain             <br />\n\t\t\tsuppliers pay us commissions as well as incentives for reaching sales targets or other goals, and from time to time may also provide incentives to our             <br />\n\t\t\ttravel counsellors.   Certain suppliers may also provide compensation to us for various marketing and administrative services that we perform for them,             <br />\n\t\t\tsuch as granting them access to our marketing channels, participating in marketing programs and supporting technology initiatives.&nbsp; In addition, we             <br />\n\t\t\treceive compensation from suppliers when customers use the American Express&reg; Card or other American Express products to pay for supplier products             <br />\n\t\t\tand services. From time to time we may enter into other business relationships with suppliers and these arrangements, including levels and types of             <br />\n\t\t\tcompensation and incentives we receive, are subject to change.   In identifying suppliers and recommending itineraries, we may consider a number of             <br />\n\t\t\tfactors; including supplier availability, your preferences, and any agreements we have to book travel in accordance with your company&rsquo;s travel policy.             <br />\n\t\t\tThe relationships we have with suppliers may also influence the suppliers we identify and the itineraries we recommend.         </li>\n\t\t         <li>\n\t\t\t             <strong>Liability Statement:</strong> American Express (AMEX) acts only as agent for the airlines, hotels and other contractors providing services (suppliers).&nbsp; By using             <br />\n\t\t\tthe services on this itinerary the client agrees that neither AMEX nor its related companies, employees or representatives shall be liable for any loss costs             <br />\n\t\t\texpense injury accident or damage to person or property resulting directly or indirectly from (a) the acts or omissions of such suppliers (b) acts of god or             <br />\n\t\t\t(c) any other cause beyond AMEX control. Our liability, except in cases involving death, injury or illness shall be limited to a maximum of the cost of your travel arrangements.         </li>\n\t\t         <li>\n\t\t\t             <strong>Privacy Policy:</strong> For American Express Privacy Policy please refer to              <a href=\"http://www.americanexpress.com/uk/legal/privacy_statement.shtml\">http://www.americanexpress.com/uk/legal/privacy_statement.shtml</a>         </li>\n\t\t         <li>\n\t\t\t             <strong>Booking Conditions:</strong> Please check your itinerary for accuracy. If there are any discrepancies please contact your travel office immediately. Failure to             <br />\n\t\t\tinform us of any amendments required to your itinerary by the same day the booking is made and the itinerary issued may result in an increase in fare or             <br />\n\t\t\tlack of availability on the desired services. Should you change your itinerary or dates of travel this may impact the fare to be paid. For the full terms and             <br />\n\t\t\tconditions please visit              <a href=\"https://www.americanexpress.com/uk/travel/termsandconditions.shtml\">https://www.americanexpress.com/uk/travel/termsandconditions.shtml</a>         </li>\n\t\t         <li>\n\t\t\t             <strong>IATA Conditions of Contract:</strong> Please visit:              <a href=\"http://htttp://www.iatatravelcentre.com/tickets\">htttp://www.iatatravelcentre.com/tickets</a>         </li>\n\t     </ul>\n\t     <p class=\"environment_note\">\n\t\tPlease consider the environment before printing this document</p>\n </div>\n\n      "
+        }
+      },
+      "Header": {
+        "HTMLDATA": {
+          "$t": " <!-- centurion_en -->\n <div class=\"centurion\">     <img alt=\"Centurion from American Express\" height=\"60\" src=\"/tbassets/static/graphics/mts/centurion.png\" /> </div>\n\n      "
+        },
+        "seq": "1"
+      },
+      "ItineraryProductCodes": {
+        "ProductCode": {
+          "ProductCode": "UKCENTCONCIERGE",
+          "InsertPoint": "CURRENT",
+          "ViewInShortItin": "0",
+          "ProductType": "2",
+          "HTMLDATA": {
+            "$t": " <h1 class=\"CENTURION\">\n\tGet more from your trip with Centurion Concierge</h1>\n <div>\n\t     <p>\n\t\tDining, entertainment, the arts - you&rsquo;ve booked your travel arrangements, now call Centurion Concierge for         <br />\n\t\trecommendations, insights and bookings to get the most from your trip.     </p>\n\t     <p>\n\t\t&nbsp;</p>\n </div>\n\n        "
+          }
+        }
+      },
+      "TravelDetails": {
+        "Date": [
+          {
+            "Date": "Thursday 10 Oct 13",
+            "FlightInformation": {
+              "DepartureAirport": "London Heathrow",
+              "DepartureCity": "London",
+              "AirlineBookingRef": "Z7SXLG",
+              "ArrivalTerminal": "Terminal  1 International",
+              "SupplierService": "Meals + Breakfast Refrshmnt/Comp",
+              "Transit": {
+                "$t": "Dubai"
+              },
+              "ArrivalCity": "Sydney",
+              "ArrivalLatitude": "-33.946111",
+              "DepartureTerminal": "Terminal  3",
+              "ArrivalAirportCode": "SYD",
+              "FlightNo": "QF2",
+              "TransitStop": {
+                "TransitLongitude": "55.364444",
+                "DepartureAirportCode": "",
+                "TransitDuration": "02 Hrs",
+                "TransitAirport": "Dubai, Dubai",
+                "TransitLatitude": "25.252778"
+              },
+              "SegmentNumber": "1",
+              "ArrivalTime": "0610",
+              "Airline": "Qantas Airways",
+              "DepartureAirportCode": "LHR",
+              "DepartureTime": "2130",
+              "DepartureDate": "10 Oct 2013",
+              "StatusCode": "HK",
+              "ArrivalAirport": "Kingsford Smith",
+              "TransitNote": {
+                "$t": "transit stop time not included"
+              },
+              "AirCraft": "Airbus Industrie A380-800 ",
+              "Date": "Thursday, October 10, 2013",
+              "Status": "Confirmed",
+              "SupplierStops": "One stop",
+              "ArrivalLongitude": "151.177222",
+              "ClassCode": "Y",
+              "Class": "Economy Class",
+              "ArrivalDate": "12 Oct 2013",
+              "ProductCodes": {
+                
+              },
+              "EstimatedTime": "20 Hrs 40 Mins*"
+            }
+          },
+          {
+            "Date": "Saturday 12 Oct 13",
+            "HotelInformation": {
+              "Address2": "SYDNEY AU 2000",
+              "SegmentNumber": "2",
+              "Status": "Confirmed",
+              "Checkout": "Sun 13 Oct 2013",
+              "Tax": "",
+              "CorporateDiscountNo": "",
+              "HoldPolicy": "",
+              "Address": "176 Cumberland Street",
+              "PaymentGuarantee": "For Late Arrival",
+              "Ref": "BRIAN1234",
+              "CancellationPolicy": "",
+              "NumberOfRooms": "1 Room",
+              "Date": "Sat 12 Oct 2013",
+              "EstimatedRate": "AUD 400.00 / per night, may be subject to local taxes and service charges",
+              "HotelName": "SHANGRILA SYDNEY",
+              "RoomType": "",
+              "Telephone": "61-2-92506000",
+              "Fax": "",
+              "Meal": "",
+              "Checkin": "Sat 12 Oct 2013",
+              "Stay": "1",
+              "SegmentRemarks": {
+                "SegmentRemark": [
+                  {
+                    "RmkNum": "014",
+                    "SegNum": "2",
+                    "$t": "1 x standard room"
+                  },
+                  {
+                    "RmkNum": "015",
+                    "SegNum": "2",
+                    "$t": "Room tax is included"
+                  },
+                  {
+                    "RmkNum": "016",
+                    "SegNum": "2",
+                    "$t": "Meal plan is room only"
+                  },
+                  {
+                    "RmkNum": "017",
+                    "SegNum": "2",
+                    "$t": "Cancel 1pm local time on day of arrival to avoid charges"
+                  },
+                  {
+                    "RmkNum": "018",
+                    "SegNum": "2",
+                    "$t": "Service charge at hotel discretion"
+                  }
+                ]
+              },
+              "ProductCodes": {
+                
+              }
+            }
+          },
+          {
+            "Date": "Sunday 13 Oct 13",
+            "CarInformation": {
+              "SpecialRequests": "",
+              "SpecialEquipment": "",
+              "Collection": "",
+              "Delivery": "",
+              "Ref": "DAVE2344",
+              "MembershipID": "",
+              "EstimatedTotal": "",
+              "AirlineMembership": "",
+              "DropOffAddress": "",
+              "SegmentNumber": "3",
+              "DropOff": "1200 / 16 Oct 2013",
+              "Pickup": "1200 / 13 Oct 2013",
+              "RentalCompany": "Hertz Rent A Car",
+              "CorporateID": "",
+              "Size": "Compact 4Dr Car Man Ac",
+              "Rate": "AUD330.00 additional local taxes and insurance costs may apply to rate",
+              "PickupAddress": "Sydney",
+              "SegmentRemarks": {
+                "SegmentRemark": [
+                  {
+                    "RmkNum": "020",
+                    "SegNum": "3",
+                    "$t": "Hertz group b ford focus or similar"
+                  },
+                  {
+                    "RmkNum": "021",
+                    "SegNum": "3",
+                    "$t": "Delivered to shangri-la hotel"
+                  },
+                  {
+                    "RmkNum": "022",
+                    "SegNum": "3",
+                    "$t": "Return melbourne airport airport"
+                  },
+                  {
+                    "RmkNum": "023",
+                    "SegNum": "3",
+                    "$t": "This car has to be paid locally direct on arrival"
+                  },
+                  {
+                    "RmkNum": "024",
+                    "SegNum": "3",
+                    "$t": "No cancellation fee"
+                  },
+                  {
+                    "RmkNum": "025",
+                    "SegNum": "3",
+                    "$t": "Includes unlimited mileage"
+                  },
+                  {
+                    "RmkNum": "026",
+                    "SegNum": "3",
+                    "$t": "Collision damage waiver"
+                  },
+                  {
+                    "RmkNum": "027",
+                    "SegNum": "3",
+                    "$t": "Theft protection service charges and taxes"
+                  },
+                  {
+                    "RmkNum": "028",
+                    "SegNum": "3",
+                    "$t": "Insurance excess fee if damaged aud1500"
+                  },
+                  {
+                    "RmkNum": "029",
+                    "SegNum": "3",
+                    "$t": "Insurance excess fee if stolen aud1500"
+                  },
+                  {
+                    "RmkNum": "030",
+                    "SegNum": "3",
+                    "$t": "Please remember to take all parts of your driving"
+                  },
+                  {
+                    "RmkNum": "031",
+                    "SegNum": "3",
+                    "$t": "Licence along with you."
+                  }
+                ]
+              },
+              "Date": "Sunday, October 13, 2013",
+              "Status": "Confirmed",
+              "RateType": "Daily",
+              "Currency": "",
+              "Mileage": "",
+              "Phone": ""
+            }
+          },
+          {
+            "Date": "Wednesday 16 Oct 13",
+            "HotelInformation": {
+              "Address2": "MELBOURNE AU 3006",
+              "SegmentNumber": "4",
+              "Status": "Confirmed",
+              "Checkout": "Fri 18 Oct 2013",
+              "Tax": "",
+              "CorporateDiscountNo": "",
+              "HoldPolicy": "",
+              "Address": "8 Whiteman Street Southbank",
+              "PaymentGuarantee": "For Late Arrival",
+              "Ref": "175836625",
+              "CancellationPolicy": "Cancel 24H prior to day of arrival",
+              "NumberOfRooms": "1 Room",
+              "Date": "Wed 16 Oct 2013",
+              "EstimatedRate": "AUD 275.00 / per night, may be subject to local taxes and service charges",
+              "HotelName": "CROWN PROMENADE HOT",
+              "RoomType": "",
+              "Telephone": "61-3-92926688",
+              "Fax": "61-3-92926677",
+              "Meal": "",
+              "Checkin": "Wed 16 Oct 2013",
+              "Stay": "2",
+              "ProductCodes": {
+                
+              }
+            }
+          },
+          {
+            "Date": "Friday 18 Oct 13",
+            "CarInformation": {
+              "SpecialRequests": "",
+              "SpecialEquipment": "",
+              "Collection": "",
+              "Delivery": "",
+              "Ref": "43610480GB4",
+              "MembershipID": "",
+              "EstimatedTotal": "",
+              "AirlineMembership": "",
+              "DropOffAddress": "",
+              "SegmentNumber": "5",
+              "DropOff": "1000 / 20 Oct 2013",
+              "Pickup": "1000 / 18 Oct 2013",
+              "RentalPeriod": "2 Days 0 Hours",
+              "RentalCompany": "Avis Rent A Car",
+              "CorporateID": "",
+              "Size": "Compact Car Auto Ac",
+              "Rate": "AUD 146.32 additional local taxes and insurance costs may apply to rate",
+              "PickupAddress": "Melbourne",
+              "SegmentRemarks": {
+                "SegmentRemark": [
+                  {
+                    "RmkNum": "032",
+                    "SegNum": "5",
+                    "$t": "Car group c ford focus or similar"
+                  },
+                  {
+                    "RmkNum": "033",
+                    "SegNum": "5",
+                    "$t": "Pick up melbourne"
+                  },
+                  {
+                    "RmkNum": "034",
+                    "SegNum": "5",
+                    "$t": "Return melbourne"
+                  },
+                  {
+                    "RmkNum": "035",
+                    "SegNum": "5",
+                    "$t": "This car has to be paid locally direct on arrival"
+                  },
+                  {
+                    "RmkNum": "036",
+                    "SegNum": "5",
+                    "$t": "No cancellation fee"
+                  },
+                  {
+                    "RmkNum": "037",
+                    "SegNum": "5",
+                    "$t": "Includes unlimited mileage"
+                  },
+                  {
+                    "RmkNum": "038",
+                    "SegNum": "5",
+                    "$t": "Collision damage waiver"
+                  },
+                  {
+                    "RmkNum": "039",
+                    "SegNum": "5",
+                    "$t": "Theft protection service charges and taxes"
+                  },
+                  {
+                    "RmkNum": "040",
+                    "SegNum": "5",
+                    "$t": "Insurance excess fee if damaged aud1500"
+                  },
+                  {
+                    "RmkNum": "041",
+                    "SegNum": "5",
+                    "$t": "Insurance excess fee if stolen aud1500"
+                  },
+                  {
+                    "RmkNum": "042",
+                    "SegNum": "5",
+                    "$t": "Please remember to take all parts of your driving"
+                  },
+                  {
+                    "RmkNum": "043",
+                    "SegNum": "5",
+                    "$t": "Licence along with you."
+                  }
+                ]
+              },
+              "Date": "Friday, October 18, 2013",
+              "Status": "Confirmed",
+              "RateType": "Daily",
+              "Currency": "AUD",
+              "Mileage": "Unlimited Kilometres",
+              "Phone": ""
+            }
+          },
+          {
+            "Date": "Monday 21 Oct 13",
+            "FlightInformation": {
+              "DepartureAirport": "Tullamarine",
+              "DepartureCity": "Melbourne",
+              "ArrivalTerminal": "Terminal  3",
+              "SupplierService": "Dinner Refrshmnt/Comp + Meals",
+              "Transit": {
+                "$t": "Dubai"
+              },
+              "ArrivalCity": "London",
+              "ArrivalLatitude": "51.4775",
+              "DepartureTerminal": "Terminal  2",
+              "ArrivalAirportCode": "LHR",
+              "FlightNo": "QF9",
+              "TransitStop": {
+                "TransitLongitude": "55.364444",
+                "DepartureAirportCode": "",
+                "TransitDuration": "01 Hrs 35 Mins",
+                "TransitAirport": "Dubai, Dubai",
+                "TransitLatitude": "25.252778"
+              },
+              "SegmentNumber": "6",
+              "ArrivalTime": "0530",
+              "Airline": "Qantas Airways",
+              "DepartureAirportCode": "MEL",
+              "DepartureTime": "1625",
+              "DepartureDate": "21 Oct 2013",
+              "StatusCode": "YK",
+              "ArrivalAirport": "London Heathrow",
+              "TransitNote": {
+                "$t": "transit stop time not included"
+              },
+              "AirCraft": "Airbus Industrie A380-800 ",
+              "Date": "Monday, October 21, 2013",
+              "Status": "Confirmed",
+              "SupplierStops": "One stop",
+              "ArrivalLongitude": "-0.461389",
+              "ClassCode": "Y",
+              "Class": "Economy Class",
+              "ArrivalDate": "22 Oct 2013",
+              "ProductCodes": {
+                
+              },
+              "EstimatedTime": "21 Hrs 30 Mins*"
+            }
+          },
+          {
+            "Date": "Wednesday 23 Oct 13",
+            "RailInformation": {
+              "Status": "Confirmed",
+              "SupplierStops": "One stop - Ebbsfleet Kent",
+              "SegmentNumber": "7",
+              "Arriving": "1401",
+              "RefControlNumber": "Z7SXLG",
+              "SegmentRemarks": {
+                "SegmentRemark": {
+                  "RmkNum": "060",
+                  "SegNum": "7",
+                  "$t": "Coach 18 seat 52 has been reserved this route z7sxlg"
+                }
+              },
+              "TrainCode": "9018",
+              "DepartureDate": "23 Oct 2013",
+              "Origin": "London, London St. Pancras",
+              "ProviderName": "Eurostar",
+              "Destination": "Paris, Gare du Nord Rail Stn",
+              "ConfirmationNumber": "Z7SXLG",
+              "Departing": "1025",
+              "ArrivalDate": "23 Oct 2013",
+              "MealRequest": "No Meal Svc",
+              "EstimatedTime": "3 Hrs 36 Mins"
+            },
+            "OtherInformation": {
+              "Status": "Confirmed",
+              "StartDate": "23 Oct 13",
+              "SegmentType": "RAIL ",
+              "SegmentNumber": "8",
+              "SegmentRemarks": {
+                
+              },
+              "Description": "Rail Information",
+              "Item": [
+                {
+                  "label": "Origin",
+                  "space": "false",
+                  "sequence": "100",
+                  "$t": "Paris gare du nord",
+                  "value": "Paris gare du nord"
+                },
+                {
+                  "label": "Destination",
+                  "space": "false",
+                  "sequence": "200",
+                  "$t": "St pancras intl",
+                  "value": "St pancras intl"
+                },
+                {
+                  "label": "Departing",
+                  "space": "true",
+                  "sequence": "300",
+                  "$t": "2100",
+                  "value": "2100"
+                },
+                {
+                  "label": "Arriving",
+                  "space": "false",
+                  "sequence": "400",
+                  "$t": "2200",
+                  "value": "2200"
+                },
+                {
+                  "label": "Company",
+                  "space": "false",
+                  "sequence": "500",
+                  "$t": "Eurostar",
+                  "value": "Eurostar"
+                },
+                {
+                  "label": "Price",
+                  "space": "false",
+                  "sequence": "600",
+                  "$t": "Gbp 120.00",
+                  "value": "Gbp 120.00"
+                },
+                {
+                  "label": "Class",
+                  "space": "false",
+                  "sequence": "700",
+                  "$t": "Standard premier",
+                  "value": "Standard premier"
+                },
+                {
+                  "label": "Coach",
+                  "space": "false",
+                  "sequence": "800",
+                  "$t": "10",
+                  "value": "10"
+                },
+                {
+                  "label": "Seats",
+                  "space": "false",
+                  "sequence": "900",
+                  "$t": "15",
+                  "value": "15"
+                },
+                {
+                  "label": "Supplier Reference",
+                  "space": "false",
+                  "sequence": "1100",
+                  "$t": "Asdfg",
+                  "value": "Asdfg"
+                }
+              ]
+            }
+          },
+          {
+            "Date": "Saturday 26 Oct 13",
+            "InsuranceInformation": {
+              "Status": "Confirmed",
+              "StartDate": "26 Oct 13",
+              "SegmentNumber": "9",
+              "Description": "Covermore Travel Insurance Policy Abc123 ",
+              "Location": "London",
+              "Vendor": "AA"
+            }
+          },
+          {
+            "SeaInformation": {
+              "Status": "Confirmed",
+              "SegmentNumber": "10",
+              "RefControlNumber": "1234567",
+              "Description": "",
+              "DepartureDate": "12 Nov 2013",
+              "Origin": "Stockholm",
+              "ProviderName": "Viking Line",
+              "Destination": "Vantaa",
+              "ShipCode": "MS SCANDIA",
+              "DepartureTerminal": "Pier 3",
+              "ArrivalDate": "12 Nov 2013"
+            },
+            "Date": "Tuesday 12 Nov 13"
+          }
+        ]
+      },
+      "Footer": {
+        "HTMLDATA": {
+          "$t": " <div>\n\t     <img alt=\"American Express Logo\" height=\"91\" src=\"/tbassets/static/graphics/amex_bluebox_comp.png\" width=\"91\" /> </div>\n <div class=\"abta_atol\">\n\t     <img alt=\"ABTA logo\" height=\"50\" src=\"/tbassets/static/graphics/mts/logo_abta.png\" width=\"125\" />     <img alt=\"ATOL logo\" height=\"50\" src=\"/tbassets/static/graphics/mts/logo_atol_0151.png\" width=\"50\" /> </div>\n <p class=\"abta_atol\">\n\tAmerican Express Europe Limited, Registered office: American Express Europe Limited.     <br />\n\tAmex House, Edward Street, Brighton BN88 1AH. UK Registered Number BR000897     <br />     <br />\n\tItinerary GAZRVK generated Thu, 15 August 2013 06:19:28. Any changes made after this time are not reflected. </p>\n      "
+        },
+        "seq": "1"
+      }
+    },
+    "{http://www.w3.org/2001/XMLSchema-instance}schemaLocation": "http://xml.travelbytes.com.au/tbstruct tbstruct.xsd"
+  }
+}

@@ -549,7 +549,9 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-weight: 500;
-  line-height: 4px; }
+  line-height: 4px;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important; }
 
 h2 {
   font-weight: 300; }
@@ -819,7 +821,7 @@ input[type="color"],
   margin-bottom: 10px;
   font-size: 12px;
   line-height: 20px;
-  color: #eaeeef;
+  color: #727173;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -945,13 +947,13 @@ input[type="checkbox"]:focus {
 
 input:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: #fafafa; }
+  color: #727173; }
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #fafafa; }
+  color: #727173; }
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #fafafa; }
+  color: #727173; }
 
 .radio,
 .checkbox {
@@ -1546,6 +1548,52 @@ legend + .control-group {
 .form-horizontal .form-actions {
   padding-left: 180px; }
 
+.login .well, .login form {
+  margin-bottom: 0 !important; }
+
+.login .social {
+  padding-top: 0;
+  padding-bottom: 0; }
+
+.login label.checkbox {
+  float: left; }
+
+.blue-bg h1 {
+  margin-top: 0;
+  margin-left: 0; }
+
+.social .icon-fixed-width {
+  font-size: 20px; }
+
+.social a {
+  float: right;
+  width: 50px;
+  height: 50px;
+  line-height: 56px;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center; }
+
+.social a:hover {
+  text-decoration: none; }
+
+.social a i {
+  padding-right: 0 !important; }
+
+.social .socmess {
+  padding: 14px 0 0 0;
+  float: left; }
+
+.social .socico div {
+  float: right;
+  width: 50px;
+  height: 50px;
+  border-left: 1px solid #e4e4e4; }
+
+.socico {
+  float: right;
+  margin-right: -17px; }
+
 table {
   max-width: 100%;
   background-color: transparent;
@@ -1553,11 +1601,9 @@ table {
   border-spacing: 0; }
 
 .table {
-  width: 100%;
-  line-height: 1; }
+  width: 100%; }
   .table th,
   .table td {
-    padding: 4px;
     text-align: left;
     vertical-align: top;
     width: 50%; }
@@ -1756,8 +1802,8 @@ table th[class*="span"],
   padding-bottom: 14px; }
 
 .table td {
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 9px;
+  padding-bottom: 9px;
   line-height: 15px; }
 
 .title-fix {
@@ -2417,7 +2463,7 @@ table th[class*="span"],
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: whitesmoke;
+  background-color: white;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05); }
@@ -2636,6 +2682,32 @@ input[type="button"].btn-block {
 .btn-primary {
   border: 0;
   border-bottom: 2px solid #420b36; }
+
+.btn-secondary {
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #762966;
+  background-image: -moz-linear-gradient(top, #8a3778, #5a154b);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#8a3778), to(#5a154b));
+  background-image: -webkit-linear-gradient(top, #8a3778, #5a154b);
+  background-image: -o-linear-gradient(top, #8a3778, #5a154b);
+  background-image: linear-gradient(to bottom, #8a3778, #5a154b);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF8A3778', endColorstr='#FF5A154B', GradientType=0);
+  border-color: #5a154b #5a154b #1c0717;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #5a154b;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  padding-left: 30px;
+  padding-right: 30px;
+  width: auto; }
+  .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary.active, .btn-secondary.disabled, .btn-secondary[disabled] {
+    color: white;
+    background-color: #5a154b;
+    *background-color: #45103a; }
+  .btn-secondary:active, .btn-secondary.active {
+    background-color: #310b29 \9; }
 
 .btn-warning {
   color: white;
@@ -3177,8 +3249,8 @@ input[type="submit"].btn {
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
   color: #eaeeef;
-  background-color: #bdbec1;
-  border: 1px solid #ddd;
+  background-color: #013273;
+  border: 1px solid #013273;
   border-bottom-color: transparent;
   cursor: default; }
 
@@ -3207,7 +3279,8 @@ input[type="submit"].btn {
   border-bottom: 0; }
 
 .nav-tabs.nav-stacked > li > a {
-  border: 1px solid #ddd;
+  border: 1px solid #fff;
+  font-size: 12px;
   margin-bottom: 10px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -4027,7 +4100,6 @@ input[type="submit"].btn {
   filter: alpha(opacity=80); }
 
 .modal {
-  margin-bottom: 200px;
   position: fixed;
   top: 10%;
   left: 50%;
@@ -4035,9 +4107,13 @@ input[type="submit"].btn {
   width: 560px;
   margin-left: -280px;
   background-color: white;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  *border: 1px solid #999;
+  /* IE6-7 */
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
   -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
@@ -4056,19 +4132,18 @@ input[type="submit"].btn {
 
 .modal-header {
   padding: 9px 15px;
-  border-bottom: 1px solid #eee;
-  margin-top: -5px; }
+  border-bottom: 1px solid #eee; }
   .modal-header .close {
-    margin-top: 5px; }
+    margin-top: 2px; }
   .modal-header h3 {
     margin: 0;
     line-height: 30px; }
 
 .modal-body {
-  max-height: 450px;
-  padding: 15px;
+  position: relative;
   overflow-y: auto;
-  -webkit-overflow-scrolling: touch; }
+  max-height: 400px;
+  padding: 15px; }
 
 .modal-form {
   margin-bottom: 0; }
@@ -5841,9 +5916,12 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   .nav-collapse.collapse {
     height: auto !important;
     overflow: visible !important; } }
+* {
+  font-family: "Open Sans", sans-serif; }
+
 .width-1 {
   width: 57px;
-  margin-right: 2%; }
+  margin-right: 12px; }
 
 .width-2 {
   width: 67%; }
@@ -5858,7 +5936,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   margin-bottom: 20px; }
 
 .margin-left {
-  margin-left: 2%; }
+  margin-left: 12px; }
 
 .white-bg {
   background: white; }
@@ -5904,6 +5982,9 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 .fix {
   padding: 0px !important; }
 
+.margin-left-fix {
+  margin-left: 0; }
+
 .border-bottom {
   border-bottom: 1px solid #eaeeef; }
 
@@ -5920,75 +6001,61 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   clear: both; }
 
 ul.nav-swipe {
-  padding: 0;
   margin: 0;
-  -webkit-padding-start: 0px;
-  list-style-type: none; }
+  padding: 0; }
   ul.nav-swipe li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    float: left;
-    width: 57px;
-    height: 57px;
-    border-right: 1px solid #dbdbdb; }
+    height: 57px; }
   ul.nav-swipe i {
-    font-size: 24px;
-    line-height: 57px; }
-  ul.nav-swipe li.active {
+    font-size: 21px;
+    line-height: 63px;
+    color: #bbbcbf;
+    margin: 0 20px; }
+  ul.nav-swipe li.active, ul.nav-swipe li.active i {
     color: #003475;
     font-size: 30px; }
-
-ul.nav-swipe-main {
-  padding: 0;
-  margin: 0;
-  background: white;
-  margin-bottom: 20px;
-  -webkit-padding-start: 0px;
-  list-style-type: none;
-  width: 100%;
-  height: 57px; }
 
 .text-box {
   border: 1px solid #ececec;
   background: #fafafa;
-  padding: 20px; }
+  padding: 20px;
+  margin-bottom: 20px; }
 
 .left-messages {
   position: fixed;
   right: 4px;
   top: 110px;
-  z-index: 200; }
-  .left-messages .box {
-    width: 37px;
-    height: 37px;
+  z-index: 200;
+  width: 37px;
+  height: 37px;
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #ee0530;
+  background-image: -moz-linear-gradient(top, #ff0048, #d60d0e);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff0048), to(#d60d0e));
+  background-image: -webkit-linear-gradient(top, #ff0048, #d60d0e);
+  background-image: -o-linear-gradient(top, #ff0048, #d60d0e);
+  background-image: linear-gradient(to bottom, #ff0048, #d60d0e);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFF0048', endColorstr='#FFD60D0E', GradientType=0);
+  border-color: #d60d0e #d60d0e #8e0909;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #d60d0e;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  border: 0;
+  border-bottom: 2px solid #d50d41; }
+  .left-messages:hover, .left-messages:focus, .left-messages:active, .left-messages.active, .left-messages.disabled, .left-messages[disabled] {
     color: white;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-    background-color: #ee0530;
-    background-image: -moz-linear-gradient(top, #ff0048, #d60d0e);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff0048), to(#d60d0e));
-    background-image: -webkit-linear-gradient(top, #ff0048, #d60d0e);
-    background-image: -o-linear-gradient(top, #ff0048, #d60d0e);
-    background-image: linear-gradient(to bottom, #ff0048, #d60d0e);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFF0048', endColorstr='#FFD60D0E', GradientType=0);
-    border-color: #d60d0e #d60d0e #8e0909;
-    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-    *background-color: #d60d0e;
-    /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-    border: 0;
-    border-bottom: 2px solid #d50d41; }
-    .left-messages .box:hover, .left-messages .box:focus, .left-messages .box:active, .left-messages .box.active, .left-messages .box.disabled, .left-messages .box[disabled] {
-      color: white;
-      background-color: #d60d0e;
-      *background-color: #be0c0c; }
-    .left-messages .box:active, .left-messages .box.active {
-      background-color: #a60a0b \9; }
+    background-color: #d60d0e;
+    *background-color: #be0c0c; }
+  .left-messages:active, .left-messages.active {
+    background-color: #a60a0b \9; }
   .left-messages i {
     line-height: 37px;
     font-size: 21px;
     color: white; }
+  .left-messages a {
+    text-decoration: none; }
 
 .big-icon {
   margin-left: 7px; }
@@ -6000,8 +6067,8 @@ button i {
   margin-right: 5px; }
 
 p {
-  margin: 0 0 9px 0;
-  line-height: 1;
+  margin: 0 0 8px 0;
+  line-height: 16px;
   font-weight: 300; }
   p b {
     text-transform: uppercase; }
@@ -6042,7 +6109,18 @@ p {
     width: 57px;
     text-transform: uppercase;
     text-align: center;
-    font-weight: 600; }
+    font-weight: 600;
+    float: left; }
+
+.swipe-long {
+  height: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+  color: #bbbcbf;
+  font-family: "Open Sans", sans-serif;
+  border-right: 1px solid #dbdbdb; }
 
 .swipe-bg-none {
   background: none !important;
@@ -6052,3 +6130,63 @@ p {
 .big-font {
   font-size: 25px;
   font-weight: 600; }
+
+.fix-height {
+  height: 120px; }
+
+.border-right {
+  border-right: 1px solid #dbdbdb; }
+
+.padding-fix {
+  padding-top: 10px !important; }
+
+.padding-left {
+  padding-top: 10px;
+  padding-left: 12px; }
+
+.active {
+  color: #003475;
+  font-size: 30px; }
+
+ul.seg-cards {
+  margin: 12px 0 0 0;
+  list-style: none; }
+
+.intro {
+  text-align: center;
+  padding: 19px; }
+
+.login .intro p {
+  color: #FFF;
+  font-size: 15px;
+  line-height: 1.55em; }
+
+div.login.shell {
+  background: url(http://www.australia.com/contentimages/plan-plan-your-trip-find-travel-agent.jpg) no-repeat fixed; }
+
+table.table-striped:first-child tr td {
+  padding-top: 14px; }
+
+.onoffswitch {
+  margin-bottom: 20px; }
+
+.no-bg {
+  background: none;
+  background: #bdbec1 !important; }
+
+.settings p {
+  line-height: 40px; }
+
+.alerts h2 {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: bold;
+  text-transform: uppercase; }
+.alerts h3 {
+  margin: 0 0 8px 0;
+  line-height: 16px;
+  font-weight: 300;
+  font-size: 12px; }
+.alerts button i {
+  margin: 0; }

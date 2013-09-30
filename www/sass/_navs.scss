@@ -134,8 +134,8 @@
 .nav-tabs > .active > a:hover,
 .nav-tabs > .active > a:focus {
   color: $gray;
-  background-color: $bodyBackground;
-  border: 1px solid #ddd;
+  background-color: #013273;
+  border: 1px solid #013273;
   border-bottom-color: transparent;
   cursor: default;
 }
@@ -179,7 +179,8 @@
   border-bottom: 0;
 }
 .nav-tabs.nav-stacked > li > a {
-  border: 1px solid #ddd;
+  border: 1px solid #fff;
+  font-size:12px;
   margin-bottom:10px;
   @include border-radius(4px);
 }

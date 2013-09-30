@@ -1,0 +1,24 @@
+<div class="white-bg" ng-controller="MCMCtrl">
+
+	<h1>MCM Service Test</h1>
+
+	Date Now = {{now}}
+
+
+	<button ng-click="getMessages()">Get</button>
+
+
+	<div>
+		<div ng-show="MCMAlerts.MessageList.length <= 0">
+			No Alerts Currently
+		</div>
+		<div ng-show="MCMAlerts.MessageList.length > 0">
+			<div ng-repeat="msg in MCMAlerts.MessageList" ng-click="clicked($index)">
+				<alert-item content="msg"></alert-item>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
