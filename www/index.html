@@ -1,300 +1,411 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="target-densitydpi=device-dpi, initial-scale=1.0, user-scalable=no" />
+    <title>Message System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Content/default/jquery.mobile-1.2.0.css" />
+    <!--link rel="stylesheet" href="css/app.css" />-->
+    <!--link rel="stylesheet" href="Content/_assets/css/jqm-docs.css" />-->
 
-  <!-- add meta directive for iOS to allow bookmark launch to non browser -->
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-
-  <title>TravelBytes</title>
- 
-      <!--Javascript-->
-      <script type='text/javascript' src="http://code.angularjs.org/angular-1.0.1.js"></script>
-      <script type='text/javascript' src="js/ui-bootstrap-tpls-0.6.0.js"></script>
-      <script type='text/javascript' src="js/retina.js"></script>
-      <script type='text/javascript' src="js/app.js"></script>
-      <!--Styles-->
-      <link rel="stylesheet" type="text/css" href="css/responsive.css">
-      <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-      <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
-       <link href="css/font-awesome.css" rel="stylesheet">
-
+    <script src="Content/jquery.js"></script>
+    <script src="Content/jquery.mobile-1.2.0.js"></script>
 </head>
-<body ng-app="myApp"> 
+<body>
+    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+    <script type="text/javascript" charset="utf-8" src="jquery_1.5.2.min.js"></script>
+    <script type="text/javascript" src="PushNotification.js"></script>
+    <script type="text/javascript">
+        var pushNotification;
+        $(document).ready(function () {
+            $("#additem").click(function (event) {
 
-<!--Demo Modal-->
-<div ng-controller="ModalDemoCtrl">
-    <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header blue-bg white-text img-top-rounded">
-        <button ng-click="cancel()" type="button" class="close">×</button>
-            <h3>Messages</h3>
-        </div>
-        <div class="modal-body">
-        <div>
-          <p><b>Feedback Request</b></p>
-          <p>There has been a disruption in your area. Please advise for itinerary change</p>
-          <p style="padding: 20px;">
-            <button class="btn btn-large btn-block btn-primary" type="button">None</button>
-            <button class="btn btn-large btn-block btn-primary" type="button">Extend Hotel</button>
-            <button class="btn btn-large btn-block btn-primary" type="button">Change Airline</button>
-          </p>
-        </div>
+                var myid = $("#deviceid").html();
 
-        <div>
-          <p><b>Location Request</b></p>
-          <p>There has been a disruption in your area. Please advise for itinerary change</p>
-          <p class="text-box img-rounded">Lorem ipsum dolor sit amet. Suscipit. Nam, non natoque eleifend Suspendisse dictum Ut cursus nunc laoreet, arcu, neque. Magnis dignissim non! Urna varius platea sodales ultricies</p>
-          <p style="padding: 20px;">
-            <button class="btn btn-large btn-block btn-primary" type="button">Send Location</button>
-            <button class="btn btn-large btn-block btn-primary" type="button">Not Now</button>
-          </p>
-        </div>
+                if (!myid || myid.length == 0) {
+                    myid = '1234567890';
+                    $("#deviceid").html(myid);
+                }
+                $("#mylist").append('<li>Home pressed</li>');
+                //$("#mylist").listview('refresh');
+                SaveJSON(myid);
+                AckJSON(myid);
+                return true;
+            });
 
-          <p><b>Message</b></p>
-          <p class="text-box img-rounded">Lorem ipsum dolor sit amet. Suscipit. Nam, non natoque eleifend Suspendisse dictum Ut cursus nunc laoreet, arcu, neque. Magnis dignissim non! Urna varius platea sodales ultricies</p>
+            $("#Savemyurl").click(function (event) {
+                localStorage.setItem("SaveIDURL", $("#saveurl").val());
+                return true;
+            });
 
-        </div>
-        <div>
-        </div>
+            LocalStorageLoad();
+
+        });
+
+        function LoadDeviceDetails() {
+            $("#DeviceDetails").empty();
+            try {
+                $("#DeviceDetails").append('Device Name: ' + device.name + '<br />' +
+                                   'Device PhoneGap: ' + device.phonegap + '<br />' +
+                                   'Device Platform: ' + device.platform + '<br />' +
+                                   'Device UUID: ' + device.uuid + '<br />' +
+                                   'Device Version: ' + device.version + '<br />');
+            }
+            catch (err) {
+                $("#DeviceDetails").append("No device details available<br/>");
+            }
+        }
+        function LocalStorageLoad() {
+            if (localStorage.getItem("SaveIDURL"))
+                $("#saveurl").val(localStorage.getItem("SaveIDURL"));
+
+            LoadDeviceDetails();
+        }
+
+        function onDeviceReady() {
+            // $("#app-status-ul").append('<li>ready event received</li>');
+            $("#additem").click(function (event) {
+                $("#mylist").append('<li>Home pressed</li>');
+                //$('#mylist').listview('refresh');
+                SaveJSON('1234567890');
+                return true;
+            });
+            $("#clearmessage").click(function (event) {
+                var myid = "";
+                myid = $("#deviceid").html();
+                $("#mylist").append('<li>Clear pressed for ' + myid + '</li>');
+                //$('#mylist').listview('refresh');
+                AckJSON(myid);
+                return true;
+            });
+
+            $("#Savemyurl").click(function (event) {
+                localStorage.setItem("SaveIDURL", $("#saveurl").val());
+                return true;
+            });
+
+            LocalStorageLoad();
+
+            document.addEventListener("backbutton", function (e) {
+                $("#app-status-ul").append('<li>backbutton event received</li>');
+
+                if ($("#home").length > 0) {
+                    // call this to get a new token each time. don't call it to reuse existing token.
+                    //pushNotification.unregister(successHandler, errorHandler);
+                    e.preventDefault();
+                    navigator.app.exitApp();
+                }
+                else {
+                    navigator.app.backHistory();
+                }
+            }, false);
+
+
+            //return true;
+
+            try {
+                pushNotification = window.plugins.pushNotification;
+                if (device.platform == 'android' || device.platform == 'Android') {
+                    $("#app-status-ul").append('<li>registering android</li>');
+                    pushNotification.register(successHandler, errorHandler, { "senderID": "661780372179", "ecb": "onNotificationGCM" });		// required!
+                } else {
+                    //$("#app-status-ul").append('<li>registering iOS</li>');
+                    pushNotification.register(tokenHandler, errorHandler, { "badge": "true", "sound": "true", "alert": "true", "ecb": "onNotificationAPN" });	// required!
+                }
+            }
+            catch (err) {
+                txt = "There was an error on this page.\n\n";
+                txt += "Error description: " + err.message + "\n\n";
+                alert(txt);
+            }
+
+        }
+
+        // handle APNS notifications for iOS
+        function onNotificationAPN(e) {
+
+            var badge = 0;
+            try {
+                if (e.alert) {
+                    $("#app-status-ul").append('<li>push-notification: ' + e.alert + '</li>');
+                    navigator.notification.alert(e.alert);
+                }
+
+                if (e.sound) {
+                    var snd = new Media(e.sound);
+                    snd.play();
+                    //navigator.notification.alert(e.sound);
+                }
+
+                if (e.badge) {
+
+                    pushNotification.setApplicationIconBadgeNumber(successHandler, e.badge);
+                    badge = e.badge;
+                }
+
+            }
+            catch (err) {
+            }
+
+            // tell server the message has arrived
+            AckJSON($("#deviceid").html());
+
+        }
+
+        // handle GCM notifications for Android
+        function onNotificationGCM(e) {
+            $("#app-status-ul").append('<li>EVENT -> RECEIVED:' + e.event + '</li>');
+
+            switch (e.event) {
+                case 'registered':
+                    if (e.regid.length > 0) {
+                        $("#app-status-ul").append('<li>REGISTERED -> REGID:' + e.regid + "</li>");
+                        // Your GCM push server needs to know the regID before it can push to this device
+                        // here is where you might want to send it the regID for later use.
+                        console.log("regID = " + e.regID);
+                    }
+                    break;
+
+                case 'message':
+                    // if this flag is set, this notification happened while we were in the foreground.
+                    // you might want to play a sound to get the user's attention, throw up a dialog, etc.
+                    if (e.foreground) {
+                        $("#app-status-ul").append('<li>--INLINE NOTIFICATION--' + '</li>');
+
+                        // if the notification contains a soundname, play it.
+                        var my_media = new Media("/android_asset/www/" + e.soundname);
+                        my_media.play();
+                    }
+                    else {	// otherwise we were launched because the user touched a notification in the notification tray.
+                        if (e.coldstart)
+                            $("#app-status-ul").append('<li>--COLDSTART NOTIFICATION--' + '</li>');
+                        else
+                            $("#app-status-ul").append('<li>--BACKGROUND NOTIFICATION--' + '</li>');
+                    }
+
+                    $("#app-status-ul").append('<li>MESSAGE -> MSG: ' + e.payload.message + '</li>');
+                    $("#app-status-ul").append('<li>MESSAGE -> MSGCNT: ' + e.payload.msgcnt + '</li>');
+                    break;
+
+                case 'error':
+                    $("#app-status-ul").append('<li>ERROR -> MSG:' + e.msg + '</li>');
+                    break;
+
+                default:
+                    $("#app-status-ul").append('<li>EVENT -> Unknown, an event was received and we do not know what it is</li>');
+                    break;
+            }
+        }
+
+        function tokenHandler(result) {
+            // navigator.notification.alert(result);
+
+            $("#mylist").append('<li>' + result + '</li>');
+            $("#deviceid").html(result);
+            SaveJSON(result);
+            // Your iOS push server needs to know the token before it can push to this device
+            // here is where you might want to send it the token for later use.
+            $('#app-status-ul.ul').listview('refresh');
+        }
+
+        function successHandler(result) {
+            $("#app-status-ul").append('<li>success:' + result + '</li>');
+        }
+
+        function errorHandler(error) {
+            $("#app-status-ul").append('<li>error:' + error + '</li>');
+        }
+
+        document.addEventListener('deviceready', onDeviceReady, true);
+
+        function SaveJSON(IDdata) {
+            // var posturl = "http://pmn.travelbytes.com.au:8080/Home/SaveJP";
+            //		    var posturl = "http://192.168.10.36/Home/SaveJP";
+            var posturl = "http://192.168.10.203/billingweb/Home/SaveJP";
+
+            if ($("#saveurl").val().length > 0)
+                posturl = $("#saveurl").val();
+
+            var DeviceName = "Not avaialble";
+            try {
+                if (window.device && window.device.name)
+                    DeviceName = window.device.name;
+
+                if (!DeviceName) {
+                    if (Device.uuid)
+                        deviceName = device.uuid;
+                    else
+                        DeviceName = 'Not Available';
+                }
+            }
+            catch (err) {
+            }
+
+            var os = "Not avaialble";
+            try {
+                if (device && device.version)
+                    os = device.platform + " " + device.version;
+            }
+            catch (err) {
+            }
+
+            $.ajax({
+                type: "post",
+                url: posturl,
+                crossDomain: true,
+                cache: false,
+                // beforeSend : function() {$.mobile.loading('show')},
+                //complete   : function() {$.mobile.loading('hide')},
+                dataType: 'jsonp',
+                data: { token: IDdata, App: "Trigger", idPhone: DeviceName, Network: "", OS: os },
+                success: function (data) {
+
+                    $('#mylist').empty();
+                    $('#mylist').append('<li>' + "ID sent to TBPN server" + '</li>');
+                    $('#mylist').append('<li>' + data.Data + '<li>');
+
+                },
+                failure: function (errMsg) {
+                    alert(errMsg);
+                }
+            });
+
+        }
+        function AckJSON(IDdata) {
+            // var posturl = "http://pmn.travelbytes.com.au:8080/Home/AcknowledgeJP";
+            //		    var posturl = "http://192.168.10.36/Home/AcknowledgeJP";
+            var posturl = "http://192.168.10.203/billingweb/Home/AcknowledgeJP";
+
+            if ($("#saveurl").val().length > 0)
+                posturl = $("#saveurl").val();
+
+
+            posturl = posturl.replace("SaveJP", "AcknowledgeJP");
+
+
+            $.ajax({
+                type: "post",
+                url: posturl,
+                crossDomain: true,
+                cache: false,
+                // beforeSend : function() {$.mobile.loading('show')},
+                //complete   : function() {$.mobile.loading('hide')},
+                dataType: 'jsonp',
+                data: { token: IDdata },
+                success: function (data) {
+
+                    $('#mylist').append('<li>' + data.Data + '<li>');
+
+                },
+                failure: function (errMsg) {
+                    alert(errMsg);
+                }
+            });
+
+        }
+
     </script>
-<div class="left-messages"><div class="box img-rounded text-center" ng-click="open()"><i class="icon-exclamation-sign"></i></div></div>
 
-</div> <!--modal-->
-<!--Navbar-->
+    <div data-role="page" data-theme="a" id="startpage">
+        <div data-role="header">
+            <a href="#startpage" data-icon="arrow-r" data-direction="reverse" id="additem">home</a>
+            <h1>Message Tester</h1>
+        </div>
+        <div data-role="content">
+            <div id="jqm-homeheader">
+                <h1 id="jqm-logo">
+                    <a href="Home/index">
+                        <img src="Content/tb_logo_sm.gif" alt="Message" /></a> </h1>
+                <p>Travelbytes</p>
+            </div>
 
-<div class="navbar navbar" ng-controller="NavBarCtrl">
-    <div class="navbar-inner">
-        <div class="container">
-            <i ng-click="isCollapsed = !isCollapsed" class="hidden-desktop icon-reorder pull-right"></i>
 
-            <a class="brand" href="#"><img src="images/logo.png" alt="logo"</a>
+            <p class="intro"><strong>Welcome</strong> to Travelbytes mobile notification tester.</p>
+            <div data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d">
+                <h3>More in this section</h3>
 
-            <div class="nav-collapse text-center" collapse="isCollapsed">
-                <ul class="nav pull-right">
-                    <li><a href="#">Dashboard</a>
-                    </li>
-                    <li><a href="#">Your Profile</a>
-                    </li>
-                    <li><a href="#">Settings</a>
-                    </li>
-                    </li>
-                    <li><a href="#">Privacy</a>
-                    </li>
-                    </li>
-                    <li><a href="#">T&C's</a>
-                    </li>
+                <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f">
+                    <li data-role="list-divider">Overview</li>
+                    <li><a href="#MyIDPage" rel="external">View My ID</a></li>
+                    <li><a href="#about" rel="external">About</a></li>
                 </ul>
             </div>
-            <!-- /.nav-collapse -->
-        </div>
-    </div>
-    <!-- /navbar-inner -->
-</div>
-
-<!--/Navbar-->
-
-
-<div class="container">
-<!--What's Up-->
-  <div class="row-fluid white-bg img-rounded" style="padding-bottom: 5px;">
-    <div class="span12">
-        <div class="pull-left width-1">
-          <p><b>Next</b></p>
-          <div class="big-icon"><i class="icon-plane"></i></div>
-        </div>
-        <div class="pull-left width-2">
-          <p><b>New York - San Francisco</b></p>
-          <p>United Airlines</p>
-          <p>Monday 02 Dec 2013 - 06.00AM New York, John F Kennedy Internationall Terminal 7</p>
-        </div>
-    </div>
-  </div><!--/.What's Up-->
-
-<!--Title Section-->
-  <div class="row-fluid blue-bg white-text img-top-rounded margin-top">
-    <div class="title-fix">
-      <h1>New York - San Francisco</h1>
-      <h2>Monday 02 Dec 2013</h2>
-    </div>
-  </div><!--/.Title Section-->
-  <div class="bar-swipe">
-    <div class="swipe">Next</div>
-  </div>
-<div class="row-fluid">
-
-<ul class="span12 fix nav-swipe-main img-bottom-rounded">
-  <ul class="nav-swipe pull-left text-center">
-        <li class="active"><i class="icon-plane"></i></li>
-  </ul>
-  <ul class="nav-swipe text-center pull-left">
-        <li><i class="icon-road"></i></li>
-        <li><i class="icon-home"></i></li>
-  </ul>
-</ul>
-</div>
-
-
-<div class="clear-fix"></div>
-
-
-<div class="ticket-view">
-<!--Title Section-->
-  <div class="row-fluid light-grey-bg border-bottom img-top-rounded">
-    <div class="span12">
-        <div class="pull-left width-1">
-          <img class="img-rounded avatar" src="images/airlines/united-airlines.jpg" alt="">
         </div>
 
-        <div class="pull-left width-2" style="margin-top:10px;">
-          <p>United Airlines</p>
-          <p><i style="color:#00957d;"class="icon-ok"></i><i>Confirmed</i></p>
-        </div>
-    </div>
-  </div><!--/.What's Up-->
 
-<div class="row-fluid white-bg">
-  <div class="row-fluid">
-    <div class="span12">
-      <table class="table">
-          <tbody>
-          <tr>
-            <th>Depart</th>
-            <th>Arrive</th>
-          </tr>
-          <tr>
-            <td>02 Dec 2013</td>
-            <td>02 Dec 2013</td>
-          </tr>
-          <tr class="big-font">
-            <td>06.00PM</td>
-            <td>09.33PM</td>
-          </tr>
-          <tr>
-            <td><img src="images/weather/1.png" class="pull-left" alt=""> <p  class="small pull-left">New York, John F Kennedy Internationall Terminal 7</p>
-            </td>
-            <td><img src="images/weather/1.png" class="pull-left" alt=""> <p  class="small pull-left">San Francisco, San Francisco International Terminal 3</p>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-  </div>
-  </div>
-</div>
-
-<div class="row-fluid white-bg">
-  <div class="row-fluid">
-    <div class="span12 fix">
-      <table class=" table table-striped shadow-top">
-          <tbody><tr>
-            <td>Estimated Duration</td>
-            <td>6 Hrs 33 Mins</td>
-          </tr>
-          <tr>
-            <td>Stops</td>
-            <td>Non-stop</td>
-          </tr>
-          <tr>
-            <td>Class</td>
-            <td>UA303 Economy Class</td>
-          </tr>
-          <tr>
-            <td>Seat</td>
-            <td>30E</td>
-          </tr>
-          <tr>
-            <td>Airline Booking Reference</td>
-            <td>FLVDWJ</td>
-          </tr>
-
-        </tbody>
-      </table>
-  </div>
-  </div>
-</div>
-
-
-
-
-
-<div class="row-fluid white-bg shadow-top margin-bottom img-bottom-rounded">
-  <div class="span12 responsive-buttons">
-  <div class="span4">
-<!--Demo Modal-->
-<div ng-controller="ModalDemoCtrl2">
-    <script type="text/ng-template" id="myModalContent2.html">
-        <div class="modal-header blue-bg white-text img-top-rounded">
-        <button ng-click="cancel()" type="button" class="close">×</button>
-            <h3>Weather Forcast</h3>
-        </div>
-        <div class="modal-body">
-        
- <tabset  vertical="true">
-    <tab heading="New York, John F Kennedy Internationall Terminal 7">Static content</tab>
-    <tab>
-      <tab-heading>San Francisco, San Francisco International Terminal 3</tab-heading>
-      I've got an HTML heading, and a select callback. Pretty cool!
-    </tab>
-  </tabset>
-
-        </div>
         <div>
+            <div id="home">
+                <div id="app-status-div">
+                    <ul id="app-status-ul" data-role="listview">
+                        <li data-role="list-divider">Push Message Notification Plugin Tester</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-    </script>
-<button class="btn btn-large btn-block btn-primary" type="button" ng-click="open()"><i class="icon-cloud"></i>Forecast</button>
 
+    </div>
+    <div data-role="footer" class="footer-docs" data-theme="b">
+        <p class="Footer-version"></p>
+        <p>&copy; 2012 Woz and contributors</p>
+    </div>
+    <div data-role="page" id="about" data-theme="a">
 
-</div> <!--modal-->
-  </div>
-  <div class="span4">
-<!--Demo Modal-->
-<div ng-controller="ModalDemoCtrl3">
-    <script type="text/ng-template" id="myModalContent3.html">
-        <div class="modal-header blue-bg white-text img-top-rounded">
-        <button ng-click="cancel()" type="button" class="close">×</button>
-            <h3>Location</h3>
+        <div data-role="header">
+            <a href="#startpage" data-icon="arrow-l" data-direction="reverse">back</a>
+            <a href="#startpage" data-icon="arrow-r" data-direction="reverse">home</a>
+            <h1>About</h1>
         </div>
-        <div class="modal-body">
-        
- <tabset  vertical="true">
-    <tab heading="New York, John F Kennedy Internationall Terminal 7">
-          <img class="img-rounded"src="images/maps/map.png" style="width: 100%;" alt="">
-    </tab>
-    <tab>
-      <tab-heading>San Francisco, San Francisco International Terminal 3</tab-heading>
-      <img class="img-rounded"src="images/maps/map2.png" style="width: 100%;" alt="">
-    </tab>
-  </tabset>
+        <!-- /header -->
+
+        <div data-role="content">
+            <div id="deviceid"></div>
+            <p>Testing App for Apple APNS</p>
+            <p><a href="#" id="clearmessage">Clear message</a></p>
+            <p><a href="#startpage">Back to home</a></p>
+        </div>
+        <!-- /content -->
+
+        <div data-role="footer">
+            <h4>Travelbytes (C)</h4>
+        </div>
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
+    <div data-role="page" data-theme="a" id="MyIDPage">
+
+        <div data-role="header">
+            <a href="#startpage" data-icon="arrow-l" data-direction="reverse">back</a>
+            <a href="#startpage" data-icon="arrow-r" data-direction="reverse">home</a>
+            <h1>About</h1>
+        </div>
+        <!-- /header -->
+
+        <div data-role="content">
+            <ul data-role="listview" id='mylist'>
+                <li data-role="list-divider">My Push ID's</li>
+                <li><span id="myID">Not set</span></li>
+            </ul>
+
+            <br />
+
+            <div id="items">
+                <input id="saveurl" type="text" value='http://pmn.travelbytes.com.au:8080/Home/SaveJP' />
+                <input type="button" value="Save" id="Savemyurl" />
+            </div>
+            <br />
+            <div id="DeviceDetails" />
+            <br />
+
+
+
 
         </div>
-        <div>
+        <!-- /content -->
+
+        <div data-role="footer">
+            <h4>Travelbytes (C)</h4>
         </div>
-    </script>
-<button class="btn btn-large btn-block btn-primary" type="button" ng-click="open()"><i class="icon-map-marker"></i>Location</button>
-
-
-</div> <!--modal-->
-  </div>
-  <div class="span4">
-<button class="btn btn-large btn-block btn-primary" type="button"><i class="icon-cny"></i>Translate</button>
-
-  </div>
-  <div class="span4">
-<button class="btn btn-large btn-block btn-primary" type="button"><i class="icon-calendar"></i>Calendar</button>
-  </div>
-  </div>
-</div>
-
-
-</div> <!--/.Ticket View-->
-
-
-
-</div> <!--/.container-->
-
-
+        <!-- /footer -->
+    </div>
+    <!-- /page -->
 </body>
-
-
 </html>
-
