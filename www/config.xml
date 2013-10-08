@@ -22,6 +22,7 @@
     -->
     <feature name="http://api.phonegap.com/1.0/device" />
 <feature name="http://api.phonegap.com/1.0/notification"/>
+<feature name="http://api.phonegap.com/1.0/geolocation"/>
     <!--
         If you do not want any permissions to be added to your app, add the
         following tag to your config.xml; you will still have the INTERNET
@@ -52,7 +53,7 @@
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
    <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.0.3" />
-
+   <gap:platform name="ios" />
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
     <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:density="ldpi" />
