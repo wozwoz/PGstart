@@ -18,7 +18,7 @@ function startWatch() {
 }
 
 function onLocationSuccess(loc) {
-  alert("onLocationSuccess");
+  //alert("onLocationSuccess");
   //Calculate distance
 
   //Calculate heading
